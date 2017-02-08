@@ -27,7 +27,9 @@ export default class Root extends Component {
               <Route path='/login' component={Login}/>
             </Router>
           </Provider>
+		  {/*
           <DevTools store={store} />
+		  */}
         </div>
     );
   }
