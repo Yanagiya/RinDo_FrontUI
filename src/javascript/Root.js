@@ -8,9 +8,9 @@ import * as hooks from './hooks';
 // Redux DevTools
 import DevTools from './containers/DevTools';
 
-import Blog from './views/Blog';
-import Draft from './views/Draft';
-import Login from './views/Login';
+import Blog from './components/views/Blog';
+import Draft from './components/views/Draft';
+import Login from './components/views/Login';
 
 hooks.bootstrap(store)();
 
@@ -23,9 +23,10 @@ export default class Root extends Component {
             <Router history={createBrowserHistory()}>
               <Route path='/' component={Blog} />
               <Route path='/post/:id/edit' component={Draft} onEnter={hooks.editPost(store)}/>
-              <Route path='/post/new' component={Draft}/>
+ {/*             <Route path='/post/new' component={Draft}/>
               <Route path='/login' component={Login}/>
-            </Router>
+            */}
+			</Router>
           </Provider>
 		  {/*
           <DevTools store={store} />
