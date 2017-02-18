@@ -8,9 +8,9 @@ import * as hooks from './hooks';
 // Redux DevTools
 import DevTools from './containers/DevTools';
 
-import Blog from './components/views/Blog';
-import Draft from './components/views/Draft';
-import Login from './components/views/Login';
+import Blog from './views/Blog';
+import Draft from './views/Draft';
+import Login from './views/Login';
 
 hooks.bootstrap(store)();
 
