@@ -15,5 +15,12 @@ export class Server {
       console.log("## connected!!!! ##");
     });
   }
+
+  registerUser( userName, password ) {
+    this.socket.emit("registerUser", {
+      userName: userName,
+      password: password
+    });
+  }
 }
 

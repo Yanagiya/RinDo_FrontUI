@@ -27,6 +27,33 @@ export default function reducer(state = initialState, action = {}) {
   }
 }
 
+export function login(username, password) {
+  return (dispatch, getState) => {
+    dispatch({
+      type: LOGIN,
+      payload: {
+        username,
+        password
+      }
+    });
+
+    // Do something async here then dispatch LOGIN_SUCCESS or LOGIN_FAILURE
+    setTimeout(() => {
+      dispatch({
+        type: LOGIN_SUCCESS,
+        payload: {
+          username,
+          password
+        },
+        meta: 'The optional meta property MAY be any type of value. It is \
+        intended for any extra information that is not part of the payload.\
+        It will still be accessible in the reduxer. You could use it for\
+        some middleware to debug your code'
+      });
+    }, 1000);
+  };
+}
+
 // export function login(username, password) {
 //   return (dispatch, getState) => {
 //     dispatch({

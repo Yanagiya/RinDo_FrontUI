@@ -50,6 +50,8 @@ export default class Header extends Component {
                       </IconButton>
                     }>
             
+			<MenuItem primaryText='Sign up'
+                      onTouchTap={() => history.pushState(null, '/register')} />
 			<MenuItem leftIcon={<ActionAccountCicle />} primaryText='Login'
                       onTouchTap={() => history.pushState(null, '/login')} />
 			<MenuItem primaryText="Refresh" />
