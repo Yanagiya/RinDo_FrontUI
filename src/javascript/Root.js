@@ -6,11 +6,12 @@ import { store } from './redux';
 import withMaterialUI from './decorators/withMaterialUI';
 import * as hooks from './hooks';
 // Redux DevTools
-import DevTools from './containers/DevTools';
+import DevTools from './components/containers/DevTools';
 
-import Blog from './components/views/Blog';
-import Draft from './components/views/Draft';
-import Login from './components/views/Login';
+import Blog from './components/presentators/Blog';
+import Draft from './components/presentators/Draft';
+import Login from './components/presentators/Login';
+import Main from './components/presentators/Main';
 
 hooks.bootstrap(store)();
 

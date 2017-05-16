@@ -6,7 +6,7 @@ import TitleStyle from 'material-ui/src/styles/colors.js';
 import NavigationMoreVert from 'material-ui/lib/svg-icons/navigation/more-vert';
 import ActionAccountCicle from 'material-ui/lib/svg-icons/action/account-circle';
 import Colors from 'material-ui/src/styles/colors.js';
-import SocialGithub from '../../images/GitHub-Mark-Light-120px-plus.png';
+import SocialGithub from '../../../images/GitHub-Mark-Light-120px-plus.png';
 
 export default class Header extends Component {
   static contextTypes = {
