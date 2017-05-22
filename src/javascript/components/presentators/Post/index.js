@@ -14,7 +14,7 @@ import EditorModeEdit from 'material-ui/lib/svg-icons/editor/mode-edit';
 import ActionDelete from 'material-ui/lib/svg-icons/action/delete';
 import SocialShare from 'material-ui/lib/svg-icons/social/share';
 
-export default class Blogpost extends Component {
+export default class Post extends Component {
   static propTypes = {
     actions: PropTypes.shape({
       editPost: PropTypes.func,
@@ -38,8 +38,8 @@ export default class Blogpost extends Component {
     return {
       card: {
         position: 'relative',
-        marginTop: 10,
-        marginBottom: 20
+        marginTop: 2,
+        marginBottom: 2
       },
       iconMenu: {
         position: 'absolute',
@@ -48,17 +48,17 @@ export default class Blogpost extends Component {
         zIndex: 5
       },
       cardMedia: {
-        marginTop: 20,
+        marginTop: 2,
         background: 'black',
         minHeight: 100
       },
       cardMediaStyle: {
-        maxHeight: '500px',
+        maxHeight: '200px',
         textAlign: 'center'
       },
       cardMediaImage: {
-        maxHeight: '500px',
-        maxWidth: '100%'
+        maxHeight: '200px',
+        maxWidth: '40%'
       }
     };
   }

@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 import Header from '../presentators/Header';
 import Footer from '../presentators/Footer';
 
-class AppBar extends Component {
+@connect()
+export default class AppBar extends Component {
   static propTypes = {
     dispatch: PropTypes.func.isRequired,
     children: PropTypes.oneOfType([
@@ -37,4 +38,3 @@ class AppBar extends Component {
   }
 }
 
-export default connect()(AppBar);
