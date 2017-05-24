@@ -20,12 +20,13 @@ export default class PostList extends Component {
     const actions = bindActionCreators(BlogActions, dispatch);
 
     return (
-      <div>
+      <div style={this.props.style}>
         {blogposts.map((post, i) =>
           <Post key={i}
                 post={post}
                 user={users.filter(user => user.id === post.user)[0]}
-                actions={actions}/>
+                actions={actions}
+          />
         )}
       </div>
     );

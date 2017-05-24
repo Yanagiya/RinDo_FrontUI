@@ -72,36 +72,36 @@ export default class Post extends Component {
 
     if (post.poster) {
       title = (
-          <CardMedia style={styles.cardMedia}
-                     mediaStyle={styles.cardMediaStyle}
-                     overlay={title}>
-            <div>
-              <img style={styles.cardMediaImage} src={post.poster}/>
-            </div>
-          </CardMedia>
+        <CardMedia style={styles.cardMedia}
+                   mediaStyle={styles.cardMediaStyle}
+                   overlay={title}>
+          <div>
+            <img style={styles.cardMediaImage} src={post.poster}/>
+          </div>
+        </CardMedia>
       );
     }
 
     return (
-        <Card style={styles.card}>
-          <CardHeader title={`${user.firstname} ${user.lastname}`}
-                      avatar={user.avatar}>
-            <IconMenu style={styles.iconMenu}
-                      iconButtonElement={
-                        <IconButton><NavigationMoreVert /></IconButton>
-                      }>
-              <MenuItem leftIcon={<EditorModeEdit />} primaryText='Edit'
-                        onTouchTap={() => {
-                          history.pushState(null, `/post/${post.id}/edit`);
-                        }}/>
-              <MenuItem leftIcon={<ActionDelete />} primaryText='Remove'
-                        onTouchTap={actions.removePost.bind(null, post)}/>
-              <MenuItem leftIcon={<SocialShare />} primaryText='Share'/>
-            </IconMenu>
-          </CardHeader>
-          {title}
-          { post.body ? <CardText>{post.body}</CardText> : '' }
-        </Card>
+      <Card style={styles.card}>
+        <CardHeader title={`${user.firstname} ${user.lastname}`}
+                    avatar={user.avatar}>
+          <IconMenu style={styles.iconMenu}
+                    iconButtonElement={
+                      <IconButton><NavigationMoreVert /></IconButton>
+                    }>
+            <MenuItem leftIcon={<EditorModeEdit />} primaryText='Edit'
+                      onTouchTap={() => {
+                        history.pushState(null, `/post/${post.id}/edit`);
+                      }}/>
+            <MenuItem leftIcon={<ActionDelete />} primaryText='Remove'
+                      onTouchTap={actions.removePost.bind(null, post)}/>
+            <MenuItem leftIcon={<SocialShare />} primaryText='Share'/>
+          </IconMenu>
+        </CardHeader>
+        {title}
+        { post.body ? <CardText>{post.body}</CardText> : '' }
+      </Card>
     );
   }
 }

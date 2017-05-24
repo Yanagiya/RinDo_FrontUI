@@ -19,6 +19,14 @@ export default class Blog extends Component {
         right: 20,
         bottom: 20,
         zIndex: 100
+      },
+      mainMap: {
+        width: 700,
+        float: "left"
+      },
+      postList: {
+        width: 400,
+        float: "right"
       }
     };
   }
@@ -29,8 +37,8 @@ export default class Blog extends Component {
 
     return (
       <AppBar>
-        <MainMap />
-        <PostList />      
+        <MainMap style={styles.mainMap} />
+        <PostList style={styles.postList} />      
         <FloatingActionButton style={styles.addContent}
                               onTouchTap={() => {
                                 history.pushState(null, '/post/new');
