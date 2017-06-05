@@ -31,7 +31,6 @@ export default class AppBar extends Component {
           <Header />
           <main style={styles.main}>
             {this.props.children}
-            <Footer />
           </main>
         </div>
     );

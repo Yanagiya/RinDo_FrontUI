@@ -5,7 +5,11 @@ export default class MainMap extends Component {
     const path = "./src/javascript/components/presentators/MainMap/worldatlas_800.gif"; 
 
     return (
-      <img src={path} style={this.props.style}/>
+      <div>
+        <input type="text" style={this.props.style}/>
+        <input type="button" value="Search"/>
+        <img src={path} style={this.props.style}/>
+      </div>
     );
   }
 }
