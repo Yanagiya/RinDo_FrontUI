@@ -4,14 +4,17 @@ import createBrowserHistory from 'history/lib/createBrowserHistory';
 import { Provider } from 'react-redux';
 import { store } from './redux';
 import withMaterialUI from './decorators/withMaterialUI';
+import { Server } from './redux/modules/utils/server';
 import * as hooks from './hooks';
 // Redux DevTools
 import DevTools from './components/containers/DevTools';
 
 import Blog from './components/presentators/Blog';
 import Draft from './components/presentators/Draft';
+import Register from './components/presentators/Register';
 import Login from './components/presentators/Login';
 
+export const server = new Server( store );
 hooks.bootstrap(store)();
 
 @withMaterialUI
@@ -24,6 +27,7 @@ export default class Root extends Component {
               <Route path='/' component={Blog} />
               <Route path='/post/:id/edit' component={Draft} onEnter={hooks.editPost(store)}/>
               <Route path='/post/new' component={Draft}/>
+              <Route path='/register' component={Register}/>
               <Route path='/login' component={Login}/>
             </Router>
           </Provider>

@@ -4,9 +4,9 @@ import { connect } from 'react-redux';
 import { Paper, TextField, RaisedButton } from 'material-ui';
 import ActionAccountCicle
 from 'material-ui/lib/svg-icons/action/account-circle';
-import * as LoginActions from '../../../redux/modules/login';
+import * as RegisterActions from '../../../redux/modules/register';
 
-class Login extends Component {
+class Register extends Component {
   static propTypes = {
     dispatch: PropTypes.func.isRequired
   }
@@ -67,15 +67,15 @@ class Login extends Component {
 
   submit(event) {
     const { dispatch } = this.props;
-    const actions = bindActionCreators(LoginActions, dispatch);
+    const actions = bindActionCreators(RegisterActions, dispatch);
 
     const identity = this.refs.identity.getValue();
     const password = this.refs.password.getValue();
 
     if (event.type === 'keydown' && event.keyCode !== 13) return;
 
-    actions.login(identity, password);
+    actions.register(identity, password);
 
   }
 }
-export default connect(state => ({ user: state.user }))(Login);
+export default connect(state => ({ user: state.user }))(Register);
