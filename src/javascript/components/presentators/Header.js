@@ -7,9 +7,12 @@ import NavigationMoreVert from 'material-ui/lib/svg-icons/navigation/more-vert';
 import ActionAccountCicle from 'material-ui/lib/svg-icons/action/account-circle';
 import Colors from 'material-ui/src/styles/colors.js';
 import SocialGithub from '../../../images/GitHub-Mark-Light-120px-plus.png';
+import { REGISTER_INIT } from '../../redux/modules/register';
+import { LOGIN_INIT } from '../../redux/modules/login';
 
 export default class Header extends Component {
   static contextTypes = {
+    dispatch: PropTypes.func.isRequired,
     history: PropTypes.object.isRequired
   }
   getStyles() {
@@ -39,6 +42,7 @@ export default class Header extends Component {
   render() {
     const { history } = this.context;
     const styles = this.getStyles();
+    const { title } = this.props;
 
     const iconElementRight = (
       <div>
@@ -51,11 +55,21 @@ export default class Header extends Component {
         >
           <MenuItem leftIcon={<ActionAccountCicle />} 
                     primaryText='Register'
-                    onTouchTap={() => history.pushState(null, '/register')} 
+                    onTouchTap={() => {
+                      history.pushState(null, '/register');
+                      this.props.dispatch({
+                        type: REGISTER_INIT,
+                      });
+                    }} 
           />
           <MenuItem leftIcon={<ActionAccountCicle />} 
                     primaryText='Login'
-                    onTouchTap={() => history.pushState(null, '/login')} 
+                    onTouchTap={() => {
+                      history.pushState(null, '/login')
+                      this.props.dispatch({
+                        type: LOGIN_INIT,
+                      });
+                    }} 
           />
           <MenuItem primaryText="Refresh" />
           <MenuItem primaryText="Help &amp; feedback" />
@@ -65,7 +79,7 @@ export default class Header extends Component {
     );
 
     return (
-      <AppBar title='Rindo'
+      <AppBar title={ title }
               style={styles.Stitle}
               iconElementLeft={<span />}
               iconElementRight={iconElementRight} 

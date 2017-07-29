@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { Paper, TextField, RaisedButton } from 'material-ui';
 import ActionAccountCicle
 from 'material-ui/lib/svg-icons/action/account-circle';
-import * as LoginActions from '../../../redux/modules/login';
+import LoginContainer from '../../containers/LoginContainer';
 
 class Login extends Component {
   static propTypes = {
@@ -43,39 +43,10 @@ class Login extends Component {
 
     return (
         <div style={styles.center}>
-          <Paper style={styles.paper}>
-            <ActionAccountCicle style={{ height: 100, width: 100 }}/><br/>
-            <TextField ref='identity'
-                       hintText='email'
-                       floatingLabelText='email'
-                       defaultValue='john.doe@example.com'
-                       onKeyDown={::this.submit} /><br/>
-            <TextField ref='password'
-                       hintText='password'
-                       floatingLabelText='password'
-                       type='password'
-                       defaultValue='qwertyuiop'
-                       onKeyDown={::this.submit} /><br />
-            <RaisedButton style={styles.submit}
-                          label='Submit'
-                          onTouchTap={::this.submit}
-                          primary />
-          </Paper>
+          <LoginContainer />
         </div>
     );
   }
 
-  submit(event) {
-    const { dispatch } = this.props;
-    const actions = bindActionCreators(LoginActions, dispatch);
-
-    const identity = this.refs.identity.getValue();
-    const password = this.refs.password.getValue();
-
-    if (event.type === 'keydown' && event.keyCode !== 13) return;
-
-    actions.login(identity, password);
-
-  }
 }
-export default connect(state => ({ user: state.user }))(Login);
+export default connect()(Login);

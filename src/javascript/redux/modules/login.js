@@ -1,10 +1,15 @@
 import { server } from '../../Root';
 
-const LOGIN = 'login/LOGIN';
-const LOGIN_SUCCESS = 'login/LOGIN_SUCCESS';
-const LOGIN_FAILURE = 'login/LOGIN_FAILURE';
+export const LOGIN_INIT = 'login/LOGIN_INIT';
+export const LOGIN = 'login/LOGIN';
+export const LOGIN_SUCCESS = 'login/LOGIN_SUCCESS';
+export const LOGIN_FAILURE = 'login/LOGIN_FAILURE';
+
+export const LOGIN_BEFORE = 'LOGIN_BEFORE';
+export const LOGIN_AFTER  = 'LOGIN_AFTER';
 
 const initialState = {
+  condition: LOGIN_BEFORE,
   userName: null,
   password: null,
   userId: null,
@@ -14,14 +19,18 @@ export default function reducer(state = initialState, action = {}) {
   const { type, payload } = action;
 
   switch (type) {
+    case LOGIN_INIT:
+      return initialState;
     case LOGIN_SUCCESS:
       return {
+        condition: LOGIN_AFTER,
         userName: payload.userName,
         password: payload.password,
         userId: payload.userId,
       };
     case LOGIN_FAILURE:
       return {
+        condition: LOGIN_AFTER,
         userName: payload.userName,
         password: payload.password,
         userId: payload.userId,

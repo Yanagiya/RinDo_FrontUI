@@ -1,10 +1,15 @@
 import { server } from '../../Root';
 
-const REGISTER = 'register/REGISTER';
-const REGISTER_SUCCESS = 'register/REGISTER_SUCCESS';
-const REGISTER_FAILURE = 'register/REGISTER_FAILURE';
+export const REGISTER_INIT = 'register/REGISTER_INIT';
+export const REGISTER_SEND = 'register/REGISTER_SEND';
+export const REGISTER_SUCCESS = 'register/REGISTER_SUCCESS';
+export const REGISTER_FAILURE = 'register/REGISTER_FAILURE';
+
+export const REGISTER_BEFORE = 'REGISTER_BEFORE';
+export const REGISTER_AFTER  = 'REGISTER_AFTER';
 
 const initialState = {
+  condition: REGISTER_BEFORE,
   userName: null,
   password: null,
   userId: null,
@@ -14,14 +19,18 @@ export default function reducer(state = initialState, action = {}) {
   const { type, payload } = action;
 
   switch (type) {
+    case REGISTER_INIT:
+      return initialState
     case REGISTER_SUCCESS:
       return {
+        condition: REGISTER_AFTER,
         userName: payload.userName,
         password: payload.password,
         userId: payload.userId,
       };
     case REGISTER_FAILURE:
       return {
+        condition: REGISTER_AFTER,
         userName: payload.userName,
         password: payload.password,
         userId: payload.userId,
@@ -35,7 +44,7 @@ export function register(userName, password) {
   return (dispatch, getState) => {
     server.register( userName, password );
     dispatch({
-      type: REGISTER,
+      type: REGISTER_SEND,
       payload: {
         userName: userName,
         password: password,
