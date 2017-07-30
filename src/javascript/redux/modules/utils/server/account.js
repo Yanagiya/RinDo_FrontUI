@@ -3,6 +3,7 @@ import io from 'socket.io-client';
 import * as urls from '../../../../config/urls';
 import * as RegisterActions from '../../register';
 import * as LoginActions from '../../login';
+import * as AccountActions from '../../account';
 
 export class Account {
 
@@ -15,12 +16,16 @@ export class Account {
 
     const registerActions = bindActionCreators(RegisterActions, dispatch);
     const loginActions = bindActionCreators(LoginActions, dispatch);
+    const accountActions = bindActionCreators(AccountActions, dispatch);
 
     this.socket.on( "registerResult", function(data) {
       registerActions.onRegisterResult( data );
     });
 
     this.socket.on( "loginResult", function(data) {
+      if ( data.result ) {
+        accountActions.update_account( data );
+      }
       loginActions.onLoginResult( data );
     });
   }

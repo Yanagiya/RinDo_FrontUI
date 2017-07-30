@@ -42,7 +42,7 @@ export default class LoginAfter extends Component {
     const styles = this.getStyles();
     const login = this.props.login;
 
-    if ( login.userId == null ) {
+    if ( !login.result ) {
       return (
         <div style={styles.center}>
           <p>login failed</p>

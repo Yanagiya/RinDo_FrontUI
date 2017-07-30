@@ -4,11 +4,11 @@ import Header from '../presentators/Header';
 import Footer from '../presentators/Footer';
 
 @connect(state => ({
-	login: state.login,
+	account: state.account,
 }))
 export default class AppBar extends Component {
   static propTypes = {
-    login: PropTypes.object.isRequired,
+    account: PropTypes.object.isRequired,
     dispatch: PropTypes.func.isRequired,
     children: PropTypes.oneOfType([
       PropTypes.object,
@@ -28,7 +28,10 @@ export default class AppBar extends Component {
 
   getTitle() {
     var title = 'Rindo\t\t\t';
-    const userName = this.props.login.userName;
+    const userName = this.props.account.userName;
+    console.log("## account ##");
+    console.log(this.props.account);
+    console.log("#############");
 
     if ( userName == null ) {
       return title;
@@ -37,6 +40,7 @@ export default class AppBar extends Component {
   }
 
   render() {
+    console.log("## before getTitle ##");
     const styles = this.getStyles();
     const title = this.getTitle();
 

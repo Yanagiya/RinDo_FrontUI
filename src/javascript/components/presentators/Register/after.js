@@ -43,7 +43,7 @@ class RegisterAfter extends Component {
     const styles = this.getStyles();
     const register = this.props.register;
 
-    if ( register.userId == null ) {
+    if ( !register.result ) {
       return (
         <div style={styles.center}>
           <p>registration failed</p>

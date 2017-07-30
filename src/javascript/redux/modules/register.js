@@ -10,6 +10,7 @@ export const REGISTER_AFTER  = 'REGISTER_AFTER';
 
 const initialState = {
   condition: REGISTER_BEFORE,
+  result: null,
   userName: null,
   password: null,
   userId: null,
@@ -24,6 +25,7 @@ export default function reducer(state = initialState, action = {}) {
     case REGISTER_SUCCESS:
       return {
         condition: REGISTER_AFTER,
+        result: true,
         userName: payload.userName,
         password: payload.password,
         userId: payload.userId,
@@ -31,6 +33,7 @@ export default function reducer(state = initialState, action = {}) {
     case REGISTER_FAILURE:
       return {
         condition: REGISTER_AFTER,
+        result: false,
         userName: payload.userName,
         password: payload.password,
         userId: payload.userId,
