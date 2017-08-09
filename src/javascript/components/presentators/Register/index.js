@@ -4,9 +4,10 @@ import { connect } from 'react-redux';
 import { Paper, TextField, RaisedButton } from 'material-ui';
 import ActionAccountCicle
 from 'material-ui/lib/svg-icons/action/account-circle';
-import LoginContainer from '../../containers/LoginContainer';
+import * as RegisterActions from '../../../redux/modules/register';
+import RegisterContainer from '../../containers/RegisterContainer';
 
-class Login extends Component {
+class Register extends Component {
   static propTypes = {
     dispatch: PropTypes.func.isRequired
   }
@@ -43,10 +44,10 @@ class Login extends Component {
 
     return (
         <div style={styles.center}>
-          <LoginContainer />
+          <RegisterContainer />
         </div>
     );
   }
 
 }
-export default connect()(Login);
+export default connect()(Register);

@@ -1,12 +1,12 @@
 import React, { PropTypes, Component } from 'react';
+import { Link } from 'react-router';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { Paper, TextField, RaisedButton } from 'material-ui';
 import ActionAccountCicle
 from 'material-ui/lib/svg-icons/action/account-circle';
-import LoginContainer from '../../containers/LoginContainer';
 
-class Login extends Component {
+export default class LoginAfter extends Component {
   static propTypes = {
     dispatch: PropTypes.func.isRequired
   }
@@ -40,13 +40,26 @@ class Login extends Component {
 
   render() {
     const styles = this.getStyles();
+    const login = this.props.login;
 
-    return (
+    if ( !login.result ) {
+      return (
         <div style={styles.center}>
-          <LoginContainer />
+          <p>login failed</p>
+          <Link to={'/'} activeClassName="active">go back to top page</Link>
         </div>
-    );
+      );
+    } else {
+      return (
+        <div style={styles.center}>
+          <p>
+            login success<br />
+            user name: {login.userName}<br />
+            user id: {login.userId}<br />
+          </p>
+          <Link to={'/'} activeClassName="active">go back to top page</Link>
+        </div>
+      );
+    }
   }
-
 }
-export default connect()(Login);

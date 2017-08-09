@@ -3,9 +3,12 @@ import { connect } from 'react-redux';
 import Header from '../presentators/Header';
 import Footer from '../presentators/Footer';
 
-@connect()
+@connect(state => ({
+	account: state.account,
+}))
 export default class AppBar extends Component {
   static propTypes = {
+    account: PropTypes.object.isRequired,
     dispatch: PropTypes.func.isRequired,
     children: PropTypes.oneOfType([
       PropTypes.object,
@@ -23,12 +26,23 @@ export default class AppBar extends Component {
     };
   }
 
+  getTitle() {
+    var title = 'Rindo\t\t\t';
+    const userName = this.props.account.userName;
+
+    if ( userName == 'null' || userName == null ) {
+      return title;
+    } 
+    return title + 'Hi, ' + userName;
+  }
+
   render() {
     const styles = this.getStyles();
+    const title = this.getTitle();
 
     return (
         <div>
-          <Header />
+          <Header title={title} account={this.props.account} dispatch={this.props.dispatch} />
           <main style={styles.main}>
             {this.props.children}
           </main>

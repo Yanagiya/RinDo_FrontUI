@@ -1,12 +1,13 @@
 import React, { PropTypes, Component } from 'react';
+import { Link } from 'react-router';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { Paper, TextField, RaisedButton } from 'material-ui';
 import ActionAccountCicle
 from 'material-ui/lib/svg-icons/action/account-circle';
-import LoginContainer from '../../containers/LoginContainer';
+import * as RegisterActions from '../../../redux/modules/register';
 
-class Login extends Component {
+class RegisterAfter extends Component {
   static propTypes = {
     dispatch: PropTypes.func.isRequired
   }
@@ -40,13 +41,27 @@ class Login extends Component {
 
   render() {
     const styles = this.getStyles();
+    const register = this.props.register;
 
-    return (
+    if ( !register.result ) {
+      return (
         <div style={styles.center}>
-          <LoginContainer />
+          <p>registration failed</p>
+          <Link to={'/'} activeClassName="active">go back to top page</Link>
         </div>
-    );
+      );
+    } else {
+      return (
+        <div style={styles.center}>
+          <p>
+            registration success<br />
+            user name: {this.props.register.userName}<br />
+            user id: {this.props.register.userId}<br />
+          </p>
+          <Link to={'/'} activeClassName="active">go back to top page</Link>
+        </div>
+      );
+    }
   }
-
 }
-export default connect()(Login);
+export default connect()(RegisterAfter);
