@@ -14,6 +14,9 @@ export default class Blog extends Component {
 
   getStyles() {
     return {
+	  section: {
+		display:"flex"
+	  },
       addContent: {
         position: 'fixed',
         right: 20,
@@ -21,10 +24,14 @@ export default class Blog extends Component {
         zIndex: 100
       },
       mainMap: {
+		flexBasis: 0,
+		flexDirection: "row",
         width: 700,
         float: "left",
       },
       postList: {
+		blexBasis: 0,
+		flexDirection: "row",
 		background: "yellow",
         width: 400,
         float: "right",
