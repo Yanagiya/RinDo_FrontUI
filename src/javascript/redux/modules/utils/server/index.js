@@ -17,12 +17,16 @@ export class Server {
     this.article = new Article({ socket: this.socket });
   }
 
-  register(userName, password) {
+  register( userName, password ) {
     this.account.register(userName, password);
   }
 
-  login(userName, password) {
+  login( userName, password ) {
     this.account.login(userName, password);
+  }
+
+  logout() {
+    this.account.logout();
   }
 }
 

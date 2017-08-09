@@ -5,9 +5,12 @@ import * as RegisterActions from '../../register';
 import * as LoginActions from '../../login';
 import * as AccountActions from '../../account';
 
+var _this;
+
 export class Account {
 
   constructor( props ) {
+    _this = this;
     this.socketInit( props.socket, props.dispatch );
   }
 
@@ -16,7 +19,7 @@ export class Account {
 
     const registerActions = bindActionCreators(RegisterActions, dispatch);
     const loginActions = bindActionCreators(LoginActions, dispatch);
-    const accountActions = bindActionCreators(AccountActions, dispatch);
+    this.accountActions = bindActionCreators(AccountActions, dispatch);
 
     this.socket.on( "registerResult", function(data) {
       registerActions.onRegisterResult( data );
@@ -24,7 +27,7 @@ export class Account {
 
     this.socket.on( "loginResult", function(data) {
       if ( data.result ) {
-        accountActions.update_account( data );
+        _this.accountActions.updateAccount( data );
       }
       loginActions.onLoginResult( data );
     });
@@ -42,5 +45,14 @@ export class Account {
       userName: userName,
       password: password,
     });
+  }
+
+  logout() {
+    const data = {
+      userName: null,
+      userId: null,
+      password: null,
+    };
+    this.accountActions.updateAccount( data );
   }
 }

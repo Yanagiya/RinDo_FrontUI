@@ -4,6 +4,7 @@ export const LOGIN_INIT = 'login/LOGIN_INIT';
 export const LOGIN = 'login/LOGIN';
 export const LOGIN_SUCCESS = 'login/LOGIN_SUCCESS';
 export const LOGIN_FAILURE = 'login/LOGIN_FAILURE';
+export const LOGOUT = 'login/LOGOUT';
 
 export const LOGIN_BEFORE = 'LOGIN_BEFORE';
 export const LOGIN_AFTER  = 'LOGIN_AFTER';
@@ -38,6 +39,8 @@ export default function reducer(state = initialState, action = {}) {
         password: payload.password,
         userId: payload.userId,
       };
+    case LOGOUT:
+      return initialState;
     default:
       return state;
   }
@@ -54,6 +57,20 @@ export function login(userName, password) {
       }
     });
   };
+}
+
+export function logout() {
+  return (dispatch, getState) => {
+    server.logout();
+    dispatch({
+      type: LOGIN,
+      payload: {
+        userName: null,
+        password: null,
+      }
+    });
+  };
+
 }
 
 export function onLoginResult( loginResult ) {
