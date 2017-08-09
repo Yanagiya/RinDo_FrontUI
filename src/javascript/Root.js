@@ -17,6 +17,7 @@ import Login from './components/presentators/Login';
 
 export const server = new Server( store );
 export const cookie = new Cookie();
+
 hooks.bootstrap(store)();
 
 @withMaterialUI

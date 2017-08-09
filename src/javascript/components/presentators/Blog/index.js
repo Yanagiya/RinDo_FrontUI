@@ -14,6 +14,9 @@ export default class Blog extends Component {
 
   getStyles() {
     return {
+	  section: {
+		display:"flex"
+	  },
       addContent: {
         position: 'fixed',
         right: 20,
@@ -21,12 +24,17 @@ export default class Blog extends Component {
         zIndex: 100
       },
       mainMap: {
+		flexBasis: 0,
+		flexDirection: "row",
         width: 700,
-        float: "left"
+        float: "left",
       },
       postList: {
+		blexBasis: 0,
+		flexDirection: "row",
+		background: "yellow",
         width: 400,
-        float: "right"
+        float: "right",
       }
     };
   }
@@ -37,14 +45,16 @@ export default class Blog extends Component {
 
     return (
       <AppBar>
-        <MainMap style={styles.mainMap} />
-        <PostList style={styles.postList} />      
-        <FloatingActionButton style={styles.addContent}
+	    <div style={styles.section}>
+          <MainMap style={styles.mainMap} />
+          <PostList style={styles.postList} />      
+          <FloatingActionButton style={styles.addContent}
                               onTouchTap={() => {
                                 history.pushState(null, '/post/new');
                               }}>
-          <ContentAdd />
-        </FloatingActionButton>
+            <ContentAdd />
+          </FloatingActionButton>
+		</div>
       </AppBar>
     );
   }
