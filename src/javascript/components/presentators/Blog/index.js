@@ -22,11 +22,12 @@ export default class Blog extends Component {
       },
       mainMap: {
         width: 700,
-        float: "left"
+        float: "left",
       },
       postList: {
+		background: "yellow",
         width: 400,
-        float: "right"
+        float: "right",
       }
     };
   }
@@ -37,14 +38,16 @@ export default class Blog extends Component {
 
     return (
       <AppBar>
-        <MainMap style={styles.mainMap} />
-        <PostList style={styles.postList} />      
-        <FloatingActionButton style={styles.addContent}
+	    <div style={styles.section}>
+          <MainMap style={styles.mainMap} />
+          <PostList style={styles.postList} />      
+          <FloatingActionButton style={styles.addContent}
                               onTouchTap={() => {
                                 history.pushState(null, '/post/new');
                               }}>
-          <ContentAdd />
-        </FloatingActionButton>
+            <ContentAdd />
+          </FloatingActionButton>
+		</div>
       </AppBar>
     );
   }

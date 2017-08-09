@@ -12,6 +12,7 @@ import Blog from './components/presentators/Blog';
 import Draft from './components/presentators/Draft';
 import Login from './components/presentators/Login';
 
+
 hooks.bootstrap(store)();
 
 @withMaterialUI
