@@ -4,9 +4,8 @@ import Blog from "../presentators/Blog";
 @connect(state => ({
 	blogposts: state.blogposts,
 	users: state.users
-})
-
-export default class BlogContainer extend React.Component{
+}))
+export default class BlogContainer extends React.Component{
 	constructor( props ){
 		super( props );
 	}

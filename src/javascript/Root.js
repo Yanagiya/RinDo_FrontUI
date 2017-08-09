@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import { Router, Route } from 'react-router';
+import { Router, Route, DefaultRoute } from 'react-router';
 import createBrowserHistory from 'history/lib/createBrowserHistory';
 import { Provider } from 'react-redux';
 import { store } from './redux';
@@ -11,7 +11,7 @@ import DevTools from './components/containers/DevTools';
 import Blog from './components/presentators/Blog';
 import Draft from './components/presentators/Draft';
 import Login from './components/presentators/Login';
-import Main from './components/presentators/Main';
+
 
 hooks.bootstrap(store)();
 
@@ -26,7 +26,7 @@ export default class Root extends Component {
               <Route path='/post/:id/edit' component={Draft} onEnter={hooks.editPost(store)}/>
               <Route path='/post/new' component={Draft}/>
               <Route path='/login' component={Login}/>
-			</Router>
+            </Router>
           </Provider>
 		  {/*
           <DevTools store={store} />

@@ -12,7 +12,6 @@ export default class Header extends Component {
   static contextTypes = {
     history: PropTypes.object.isRequired
   }
-
   getStyles() {
     return {
       iconButton: {
@@ -28,12 +27,12 @@ export default class Header extends Component {
         height: 24,
         width: 24
       },
-	  Stitle: {
-		height: 24,
-		withd: 24,
-		color: Styles.Colors.orange900,
-		textAligh: 'center'
-	  }
+      Stitle: {
+        height: 24,
+        withd: 24,
+        color: Styles.Colors.orange900,
+        textAligh: 'center'
+      }
     };
   }
 
@@ -42,29 +41,31 @@ export default class Header extends Component {
     const styles = this.getStyles();
 
     const iconElementRight = (
-        <div>
-          <IconMenu style={styles.iconMenu}
-                    iconButtonElement={
-                      <IconButton>
-                        <NavigationMoreVert color='white' />
-                      </IconButton>
-                    }>
-            
-			<MenuItem leftIcon={<ActionAccountCicle />} primaryText='Login'
-                      onTouchTap={() => history.pushState(null, '/login')} />
-			<MenuItem primaryText="Refresh" />
-            <MenuItem primaryText="Help &amp; feedback" />
-            <MenuItem primaryText="Settings" />
-          </IconMenu>
-        </div>
+      <div>
+        <IconMenu style={styles.iconMenu}
+                  iconButtonElement={
+                    <IconButton>
+                      <NavigationMoreVert color='white' />
+                    </IconButton>
+                  }
+        >
+          <MenuItem leftIcon={<ActionAccountCicle />} 
+                    primaryText='Login'
+                    onTouchTap={() => history.pushState(null, '/login')} 
+          />
+          <MenuItem primaryText="Refresh" />
+          <MenuItem primaryText="Help &amp; feedback" />
+          <MenuItem primaryText="Settings" />
+        </IconMenu>
+      </div>
     );
 
     return (
-        <AppBar title='Rindo'
-				style={styles.Stitle}
-                iconElementLeft={<span />}
-                iconElementRight={iconElementRight} />
-
+      <AppBar title='Rindo'
+              style={styles.Stitle}
+              iconElementLeft={<span />}
+              iconElementRight={iconElementRight} 
+      />
     );
   }
 }

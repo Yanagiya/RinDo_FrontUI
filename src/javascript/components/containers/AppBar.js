@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 import Header from '../presentators/Header';
 import Footer from '../presentators/Footer';
 
-class AppBar extends Component {
+@connect()
+export default class AppBar extends Component {
   static propTypes = {
     dispatch: PropTypes.func.isRequired,
     children: PropTypes.oneOfType([
@@ -15,7 +16,7 @@ class AppBar extends Component {
   getStyles() {
     return {
       main: {
-        maxWidth: 950,
+        maxWidth: 1200,
         margin: '0 auto',
         paddingTop: 10
       }
@@ -30,11 +31,9 @@ class AppBar extends Component {
           <Header />
           <main style={styles.main}>
             {this.props.children}
-            <Footer />
           </main>
         </div>
     );
   }
 }
 
-export default connect()(AppBar);

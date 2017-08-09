@@ -1,19 +1,22 @@
 import React, { Component } from 'react';
 
-const styles = {
-  layout: {
-    height: '100px'
-  },
-
-  footerText: {
-    textAlign: 'right',
-    padding: '40px 0',
-    fontSize: '10px'
-  }
-};
-
 export default class Footer extends Component {
+  getStyles() {
+    return {
+      layout: {
+        height: '100px'
+      },
+
+      footerText: {
+        textAlign: 'right',
+        padding: '40px 0',
+        fontSize: '10px'
+      }
+    };
+  }
+
   render() {
+    const styles = this.getStyles();
     return (
         <div style={styles.layout}>
           <div style={styles.footerText}>

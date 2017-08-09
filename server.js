@@ -23,8 +23,11 @@ if (!isDev) {
 if (isDev) {
   var config = require('./webpack.config');
   var compiler = webpack(config);
+  var static_path = path.join(__dirname);
 
   require('./fakeAPI');
+
+  app.use('/', express.static(static_path));
 
   app.use(require('webpack-dev-middleware')(compiler, {
       noInfo: true,
