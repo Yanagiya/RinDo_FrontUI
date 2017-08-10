@@ -11,9 +11,10 @@ const initialState = {
   body: ''
 };
 
+
 export default function reducer(state = initialState, action = {}) {
   const { type, payload } = action;
-
+  console.log("state is " + initialState.poster);
   switch (type) {
   case CREATE_POST_SUCCESS:
     return {
