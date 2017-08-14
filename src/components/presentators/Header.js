@@ -1,6 +1,5 @@
 import React, { PropTypes, Component } from 'react';
 import { browserHistory } from 'react-router';
-import { bindActionCreators } from 'redux';
 import * as Colors from 'material-ui/styles/colors';
 import { AppBar, IconButton, RaiseButton } from 'material-ui';
 import IconMenu from 'material-ui/IconMenu';
@@ -8,9 +7,7 @@ import MenuItem from 'material-ui/MenuItem';
 import NavigationMoreVert from 'material-ui/svg-icons/navigation/more-vert';
 import ActionAccountCicle from 'material-ui/svg-icons/action/account-circle';
 import SocialGithub from './GitHub-Mark-Light-120px-plus.png';
-import { REGISTER_INIT } from '../../redux/modules/register';
-import { LOGIN_INIT } from '../../redux/modules/login';
-import * as LoginActions from '../../redux/modules/login';
+import * as actions from '../../actions';
 
 export default class Header extends Component {
   static contextTypes = {
@@ -40,16 +37,14 @@ export default class Header extends Component {
     };
   }
 
-  getLoginItem( account, loginActions ) {
+  getLoginItem( account ) {
     if ( account.userName == 'null' || account.userName == null ) {
       return (
         <MenuItem leftIcon={<ActionAccountCicle />} 
                   primaryText='Login'
                   onTouchTap={() => {
                     browserHistory.push('/login');
-                    this.props.dispatch({
-                      type: LOGIN_INIT,
-                    });
+                    this.props.dispatch( actions.loginInit() );
                   }} 
         />
       );
@@ -58,7 +53,7 @@ export default class Header extends Component {
       <MenuItem leftIcon={<ActionAccountCicle />} 
                 primaryText='Logout'
                 onTouchTap={() => {
-                  loginActions.logout();
+                  this.props.dispatch( actions.logout() );
                 }} 
       />
     );
@@ -67,9 +62,8 @@ export default class Header extends Component {
   render() {
     const styles = this.getStyles();
     const { title, account, dispatch } = this.props;
-    const loginActions = bindActionCreators(LoginActions, dispatch);
 
-    const loginItem = this.getLoginItem( account, loginActions );
+    const loginItem = this.getLoginItem( account );
 
     const iconElementRight = (
       <div>
@@ -84,9 +78,7 @@ export default class Header extends Component {
                     primaryText='Register'
                     onTouchTap={() => {
                       browserHistory.push('/register');
-                      this.props.dispatch({
-                        type: REGISTER_INIT,
-                      });
+                      this.props.dispatch( actions.registerInit() );
                     }} 
           />
           {loginItem}

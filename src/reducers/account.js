@@ -1,4 +1,4 @@
-import * as actions from '../actions';
+import * as types from '../actions/type';
 
 const initialState = {
   userName: null,
@@ -9,7 +9,7 @@ const initialState = {
 export default ( state = initialState, action ) => {
   const { type, payload } = action;
   switch ( type ) {
-    case actions.UPDATE_ACCOUNT:
+    case types.UPDATE_ACCOUNT:
       return {
         userName: payload.userName,
         userId: payload.userId,
