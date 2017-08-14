@@ -2,11 +2,12 @@ import { takeEvery } from 'redux-saga';
 import { put, fork, call } from 'redux-saga/effects';
 
 import * as actions from '../actions';
+import * as types from '../actions/type';
 import * as urls from '../config/urls';
 import { defaultParams as defaultFetchParams } from '../redux/modules/utils/fetch';
 
-export function* fetchPosts( payload ) {
-  const { body, method } = payload;
+export function* fetchPosts( action ) {
+  const { body, method } = action.payload;
   const url = urls.api + body;
 
   const fetchParams = {
@@ -36,5 +37,5 @@ async function getResponse( url, params ) {
 }
 
 export function* fetchPostsEventWatcher() {
-  yield* takeEvery( actions.FETCH_POSTS, fetchPosts );
+  yield* takeEvery( types.FETCH_POSTS, fetchPosts );
 }

@@ -6,17 +6,15 @@ import * as BlogActions from '../../redux/modules/blogposts';
 
 @connect(state => ({
   blogposts: state.blogposts,
-  users: state.users
 }))
 export default class PostList extends Component {
   static propTypes = {
     blogposts: PropTypes.array.isRequired,
-    users: PropTypes.array.isRequired,
     dispatch: PropTypes.func.isRequired
   }
 
   render() {
-    const { blogposts, users, dispatch } = this.props;
+    const { blogposts, dispatch } = this.props;
     const actions = bindActionCreators(BlogActions, dispatch);
 
     return (

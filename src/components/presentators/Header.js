@@ -15,7 +15,6 @@ import * as LoginActions from '../../redux/modules/login';
 export default class Header extends Component {
   static contextTypes = {
     dispatch: PropTypes.func.isRequired,
-    history: PropTypes.object.isRequired
   }
   getStyles() {
     return {
@@ -42,14 +41,11 @@ export default class Header extends Component {
   }
 
   getLoginItem( account, loginActions ) {
-    const { history } = this.context;
-
     if ( account.userName == 'null' || account.userName == null ) {
       return (
         <MenuItem leftIcon={<ActionAccountCicle />} 
                   primaryText='Login'
                   onTouchTap={() => {
-                    //history.pushState(null, '/login')
                     browserHistory.push('/login');
                     this.props.dispatch({
                       type: LOGIN_INIT,
@@ -69,7 +65,6 @@ export default class Header extends Component {
   }
 
   render() {
-    const { history } = this.context;
     const styles = this.getStyles();
     const { title, account, dispatch } = this.props;
     const loginActions = bindActionCreators(LoginActions, dispatch);
@@ -88,7 +83,6 @@ export default class Header extends Component {
           <MenuItem leftIcon={<ActionAccountCicle />} 
                     primaryText='Register'
                     onTouchTap={() => {
-                      //history.pushState(null, '/register');
                       browserHistory.push('/register');
                       this.props.dispatch({
                         type: REGISTER_INIT,

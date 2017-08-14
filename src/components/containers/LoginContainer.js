@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import LoginBefore from '../presentators/Login/before';
 import LoginAfter from '../presentators/Login/after';
-import { LOGIN_BEFORE, LOGIN_AFTER} from '../../redux/modules/login';
+import { LOGIN_BEFORE, LOGIN_AFTER} from '../../constants';
 
 @connect(state => ({
   login: state.login,

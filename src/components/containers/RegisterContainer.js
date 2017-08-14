@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import RegisterBefore from '../presentators/Register/before';
 import RegisterAfter from '../presentators/Register/after';
-import { REGISTER_BEFORE, REGISTER_AFTER} from '../../redux/modules/register';
+import { REGISTER_BEFORE, REGISTER_AFTER} from '../../constants';
 
 @connect(state => ({
   register: state.register,

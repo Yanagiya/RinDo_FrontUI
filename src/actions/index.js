@@ -1,54 +1,117 @@
-export const FETCH_POSTS = 'blogposts/FETCH_POSTS';
-export const FETCH_POSTS_SUCCESS = 'blogposts/FETCH_POSTS_SUCCESS';
-export const FETCH_POSTS_FAILURE = 'blogposts/FETCH_POSTS_FAILURE';
+import * as types from './type';
 
 export const fetchPosts = ( start = 0, limit = 10 ) => {
   return {
-    type: FETCH_POSTS,
-    body: `/post?_start=${start}&_limit=${limit}`,
-    method: 'get',
+    type: types.FETCH_POSTS,
+    payload: {
+      body: `/post?_start=${start}&_limit=${limit}`,
+      method: 'get',
+    },
   };
 };
 
 export const fetchPostsSuccess = ( payload ) => {
   return {
-    type: FETCH_POSTS_SUCCESS,
+    type: types.FETCH_POSTS_SUCCESS,
     payload: payload,
   };
 };
 
 export const fetchPostsFailure = ( payload ) => {
   return {
-    type: FETCH_POSTS_FAILURE,
+    type: types.FETCH_POSTS_FAILURE,
     payload: payload,
   };
 };
 
-export const CREATE_POST = 'blogposts/CREATE_POST';
-export const CREATE_POST_SUCCESS = 'blogposts/CREATE_POST_SUCCESS';
-export const CREATE_POST_FAILURE = 'blogposts/CREATE_POST_FAILURE';
-
-export const READ_POST = 'blogposts/READ_POST';
-export const READ_POST_SUCCESS = 'blogposts/READ_POST_SUCCESS';
-export const READ_POST_FAILURE = 'blogposts/READ_POST_FAILURE';
-
-export const UPDATE_POST = 'blogposts/UPDATE_POST';
-export const UPDATE_POST_SUCCESS = 'blogposts/UPDATE_POST_SUCCESS';
-export const UPDATE_POST_FAILURE = 'blogposts/UPDATE_POST_FAILURE';
-
-export const REMOVE_POST = 'blogposts/REMOVE_POST';
-export const REMOVE_POST_SUCCESS = 'blogposts/REMOVE_POST_SUCCESS';
-export const REMOVE_POST_FAILURE = 'blogposts/REMOVE_POST_FAILURE';
-
-export const UPDATE_ACCOUNT = 'account/UPDATE_ACCOUNT';
 export const updateAccount = ( userName, userId, password ) => {
   return {
-    type: UPDATE_ACCOUNT,
+    type: types.UPDATE_ACCOUNT,
     payload: {
       userName: userName,
       userId: userId,
       password: password,
     },
+  };
+};
+
+export const registerInit = () => {
+  return {
+    type: types.REGISTER_INIT,
+  };
+};
+
+export const registerSend = ( userName, password ) => {
+  return {
+    type: types.REGISTER_SEND,
+    payload: {
+      userName: userName,
+      password: password,
+    },
+  };
+};
+
+export const registerSuccess = ( userName, userId, password ) => {
+  return {
+    type: types.REGISTER_SUCCESS,
+    payload: {
+      userName: userName,
+      userId: userId,
+      password: password,
+    },
+  };
+};
+
+export const registerFailure = ( userName, password ) => {
+  return {
+    type: types.REGISTER_FAILURE,
+    payload: {
+      userName: userName,
+      password: password,
+    },
+  };
+};
+
+export const loginInit = () => {
+  return {
+    type: types.LOGIN_INIT,
+  };
+};
+
+export const loginSend = ( userName, password ) => {
+  return {
+    type: types.LOGIN_SEND,
+    payload: {
+      userName: userName,
+      password: password,
+    },
+  };
+};
+
+export const loginSuccess = ( userName, userId, password ) => {
+  return {
+    type: types.LOGIN_SUCCESS,
+    payload: {
+      userName: userName,
+      userId: userId,
+      password: password,
+    },
+  };
+};
+
+export const loginFailure = ( userName, password ) => {
+  return {
+    type: types.LOGIN_FAILURE,
+    payload: {
+      userName: userName,
+      password: password,
+    },
+  };
+};
+
+export const logout = () => {
+  return {
+    type: types.LOGOUT,
   };
 };
 
