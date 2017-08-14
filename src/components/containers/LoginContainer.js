@@ -25,12 +25,12 @@ export default class LoginContainer extends Component {
 
   render() {
     const styles = this.getStyles();
-    const login = this.props.login;
+    const { login, dispatch } = this.props;
 
     if ( login.condition === LOGIN_BEFORE ) {
       return (
         <div>
-          <LoginBefore/>
+          <LoginBefore dispatch={dispatch}/>
         </div>
       );
     } else if ( login.condition === LOGIN_AFTER ) {

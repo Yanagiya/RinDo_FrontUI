@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 import { Router, Route, DefaultRoute, browserHistory } from 'react-router';
 
-import { store } from '../redux.js';
 //import * as hooks from '../hooks';
 import withMaterialUI from '../decorators/withMaterialUI';
 
@@ -11,6 +10,8 @@ import Blog from './presentators/Blog';
 import Draft from './presentators/Draft';
 import Register from './presentators/Register';
 import Login from './presentators/Login';
+
+import { store } from '../redux.js';
 
 @withMaterialUI
 export default class Root extends Component {

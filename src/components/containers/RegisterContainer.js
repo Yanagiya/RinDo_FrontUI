@@ -25,12 +25,12 @@ export default class RegisterContainer extends Component {
 
   render() {
     const styles = this.getStyles();
-    const register = this.props.register;
+    const { register, dispatch } = this.props;
 
     if ( register.condition === REGISTER_BEFORE ) {
       return (
         <div>
-          <RegisterBefore />
+          <RegisterBefore dispatch={dispatch}/>
         </div>
       );
     } else if ( register.condition === REGISTER_AFTER ) {
