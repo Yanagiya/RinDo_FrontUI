@@ -33,8 +33,8 @@ export default class Header extends Component {
         width: 24
       },
       Stitle: {
-        height: 24,
-        withd: 24,
+        height: 50,
+        //width: 24,
         color: Colors.orange900,
         textAligh: 'center'
       }

@@ -24,7 +24,6 @@ export default class PostList extends Component {
         {blogposts.map((post, i) =>
           <Post key={i}
                 post={post}
-                user={users.filter(user => user.id === post.user)[0]}
                 actions={actions}
           />
         )}

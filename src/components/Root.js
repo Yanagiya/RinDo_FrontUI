@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 import { Router, Route, DefaultRoute, browserHistory } from 'react-router';
 
-import { store } from '../redux';
+import { store } from '../redux.js';
 //import * as hooks from '../hooks';
 import withMaterialUI from '../decorators/withMaterialUI';
 
@@ -18,13 +18,15 @@ export default class Root extends Component {
     return (
       <div>
         <Provider store={store}>
-            <Router history={browserHistory} >
+          <Router history={browserHistory} >
             <div>
               <Route path='/' component={Blog} />
-              {/*<Route path='/post/:id/edit' component={Draft} onEnter={hooks.editPost(store)}/>
+              {/*
+              <Route path='/post/:id/edit' component={Draft} onEnter={hooks.editPost(store)}/>
               <Route path='/post/new' component={Draft}/>
               <Route path='/register' component={Register}/>
-              <Route path='/login' component={Login}/>*/}
+              <Route path='/login' component={Login}/>
+              */}
             </div>
           </Router>
         </Provider>

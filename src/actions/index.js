@@ -5,6 +5,22 @@ export const FETCH_POSTS_FAILURE = 'blogposts/FETCH_POSTS_FAILURE';
 export const fetchPosts = ( start = 0, limit = 10 ) => {
   return {
     type: FETCH_POSTS,
+    body: `/post?_start=${start}&_limit=${limit}`,
+    method: 'get',
+  };
+};
+
+export const fetchPostsSuccess = ( payload ) => {
+  return {
+    type: FETCH_POSTS_SUCCESS,
+    payload: payload,
+  };
+};
+
+export const fetchPostsFailure = ( payload ) => {
+  return {
+    type: FETCH_POSTS_FAILURE,
+    payload: payload,
   };
 };
 
