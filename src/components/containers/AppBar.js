@@ -29,9 +29,6 @@ export default class AppBar extends Component {
   getTitle() {
     var title = 'Rindo\t\t\t';
     const userName = this.props.account.userName;
-    console.log("## account ##");
-    console.log(this.props.account);
-    console.log("#############");
 
     if ( userName == 'null' || userName == null ) {
       return title;

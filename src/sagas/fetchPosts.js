@@ -16,16 +16,9 @@ export function* fetchPosts( action ) {
   };
   //const response = await fetch(url, fetchParams);
   const [response, json] = yield call( getResponse, url, fetchParams );
-  console.log("## response ##");
-  console.log(response);
-  console.log(json);
-  console.log("##############");
-
   if (response.status >= 200 && response.status < 300) {
-    console.log("## success ##");
     yield put( actions.fetchPostsSuccess( json ) );
   } else {
-    console.log("## failure ##");
     yield put( actions.fetchPostsFailure( json ) );
   }
 }

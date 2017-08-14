@@ -1,11 +1,8 @@
 import { loginSendResult } from '../../sagas/login';
 
-var _this;
-
 export class Account {
 
   constructor( props ) {
-    _this = this;
     this.socketInit( props.socket );
   }
 
@@ -39,6 +36,5 @@ export class Account {
       userId: null,
       password: null,
     };
-    this.accountActions.updateAccount( data );
   }
 }

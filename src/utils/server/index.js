@@ -30,4 +30,5 @@ class Server {
   }
 }
 
-export const server = new Server();
+const server = new Server();
+export default server;

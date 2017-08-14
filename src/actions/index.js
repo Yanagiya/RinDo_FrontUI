@@ -35,6 +35,23 @@ export const updateAccount = ( userName, userId, password ) => {
   };
 };
 
+export const setAccountToCookie = ( userName, userId, password ) => {
+  return {
+    type: types.SET_ACCOUNT_TO_COOKIE,
+    payload: {
+      userName: userName,
+      userId: userId,
+      password: password,
+    },
+  };
+};
+
+export const getAccountFromCookie = () => {
+  return {
+    type: types.GET_ACCOUNT_FROM_COOKIE,
+  };
+};
+
 export const registerInit = () => {
   return {
     type: types.REGISTER_INIT,

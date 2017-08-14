@@ -20,6 +20,9 @@ export const REMOVE_POST_FAILURE = 'blogposts/REMOVE_POST_FAILURE';
 
 export const UPDATE_ACCOUNT = 'account/UPDATE_ACCOUNT';
 
+export const SET_ACCOUNT_TO_COOKIE = 'cookie/SET_ACCOUNT_TO_COOKIE';
+export const GET_ACCOUNT_FROM_COOKIE = 'cookie/GET_ACCOUNT_FROM_COOKIE';
+
 export const REGISTER_INIT = 'register/REGISTER_INIT';
 export const REGISTER_SEND = 'register/REGISTER_SEND';
 export const REGISTER_SUCCESS = 'register/REGISTER_SUCCESS';

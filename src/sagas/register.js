@@ -3,7 +3,7 @@ import { put, fork, call } from 'redux-saga/effects';
 
 import * as actions from '../actions';
 import * as types from '../actions/type';
-import { server } from '../utils/server';
+import server from '../utils/server';
 
 function* registerSend( action ) {
   const { userName, password } = action.payload;

@@ -3,7 +3,7 @@ import { put, take, fork, call } from 'redux-saga/effects';
 
 import * as actions from '../actions';
 import { REGISTER_RESULT, LOGIN_RESULT } from '../constants';
-import { server } from '../utils/server';
+import server from '../utils/server';
 
 function subscribe( socket ) {
   return eventChannel( emitter => {

@@ -1,24 +1,3 @@
-export class Cookie {
-
-  setAccountToCookie( userName, userId, password ) {
-    setCookie( "userName", userName );  
-    setCookie( "userId",   userId );  
-    setCookie( "password", password );  
-  }
-
-  getAccountFromCookie(){
-    const userName = getCookie( "userName" );
-    const userId   = getCookie( "userId" );
-    const password = getCookie( "password" );
-
-    return {
-      userName: userName,
-      userId:   userId,
-      password: password,
-    };
-  }
-}
-
 function setCookie( name, value ) {
   var path = location.pathname;
   // pathをフォルダ毎に指定する場合のIE対策
@@ -60,3 +39,26 @@ function getCookie( name ) {
   return null;
 }
 
+class Cookie {
+
+  setAccountToCookie( userName, userId, password ) {
+    setCookie( "userName", userName );  
+    setCookie( "userId",   userId );  
+    setCookie( "password", password );  
+  }
+
+  getAccountFromCookie(){
+    const userName = getCookie( "userName" );
+    const userId   = getCookie( "userId" );
+    const password = getCookie( "password" );
+
+    return {
+      userName: userName,
+      userId:   userId,
+      password: password,
+    };
+  }
+}
+
+const cookie = new Cookie();
+export default cookie;

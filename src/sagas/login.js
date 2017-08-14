@@ -3,7 +3,7 @@ import { put, fork, call } from 'redux-saga/effects';
 
 import * as actions from '../actions';
 import * as types from '../actions/type';
-import { server } from '../utils/server';
+import server from '../utils/server';
 
 function* loginSend( action ) {
   const { userName, password } = action.payload;
@@ -13,11 +13,13 @@ function* loginSend( action ) {
 function* loginSuccess( action ) {
   const { userName, userId, password } = action.payload;
   yield put( actions.updateAccount( userName, userId, password ) );
+  yield put( actions.setAccountToCookie( userName, userId, password ) );
 }
 
 function* logout() {
   server.logout();
   yield put( actions.updateAccount( null, null, null ) );
+  yield put( actions.setAccountToCookie( null, null, null ) );
 }
 
 function* loginSendEventWatcher() {
