@@ -1,6 +1,5 @@
-import { loginSendResult } from '../../sagas/login';
 
-export class Account {
+export default class Account {
 
   constructor( props ) {
     this.socketInit( props.socket );
@@ -8,12 +7,6 @@ export class Account {
 
   socketInit( socket ) {
     this.socket = socket;
-
-    this.socket.on( "registerResult", function(data) {
-    });
-
-    this.socket.on( "loginResult", function(data) {
-    });
   }
 
   register( userName, password ) {

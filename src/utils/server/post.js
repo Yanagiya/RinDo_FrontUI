@@ -1,5 +1,5 @@
 
-export class Article {
+export default class Post {
 
   constructor( props ) {
     this.socketInit( props.socket );
@@ -7,14 +7,6 @@ export class Article {
 
   socketInit( socket ) {
     this.socket = socket;
-
-    this.socket.on( "registerResult", function(data) {
-
-    });
-
-    this.socket.on( "loginResult", function(data) {
-
-    });
   }
 
   register( userName, password ) {

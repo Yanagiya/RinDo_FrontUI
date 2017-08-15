@@ -10,9 +10,6 @@ import SocialGithub from './GitHub-Mark-Light-120px-plus.png';
 import * as actions from '../../actions';
 
 export default class Header extends Component {
-  static contextTypes = {
-    dispatch: PropTypes.func.isRequired,
-  }
   getStyles() {
     return {
       iconButton: {

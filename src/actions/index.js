@@ -24,6 +24,36 @@ export const fetchPostsFailure = ( payload ) => {
   };
 };
 
+export const initDraft = () => {
+  return {
+    type: types.INIT_DRAFT,
+  };
+};
+
+export const editDraft = ( title, subtitle, poster, body ) => {
+  return {
+    type: types.EDIT_DRAFT,
+    payload: {
+      title: title,
+      subtitle: subtitle,
+      poster: poster,
+      body: body,
+    },
+  };
+};
+
+export const completeDraft = ( title, subtitle, poster, body ) => {
+  return {
+    type: types.COMPLETE_DRAFT,
+    payload: {
+      title: title,
+      subtitle: subtitle,
+      poster: poster,
+      body: body,
+    },
+  };
+};
+
 export const updateAccount = ( userName, userId, password ) => {
   return {
     type: types.UPDATE_ACCOUNT,

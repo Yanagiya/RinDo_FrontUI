@@ -5,11 +5,7 @@ import { Paper, TextField, RaisedButton } from 'material-ui';
 import * as RegisterActions from '../../../redux/modules/register';
 import RegisterContainer from '../../containers/RegisterContainer';
 
-class Register extends Component {
-  static propTypes = {
-    dispatch: PropTypes.func.isRequired
-  }
-
+export default class Register extends Component {
   static contextTypes = {
     muiTheme: PropTypes.object.isRequired
   }
@@ -48,4 +44,3 @@ class Register extends Component {
   }
 
 }
-export default connect()(Register);

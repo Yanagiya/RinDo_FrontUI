@@ -4,11 +4,7 @@ import { connect } from 'react-redux';
 import { Paper, TextField, RaisedButton } from 'material-ui';
 import LoginContainer from '../../containers/LoginContainer';
 
-class Login extends Component {
-  static propTypes = {
-    dispatch: PropTypes.func.isRequired
-  }
-
+export default class Login extends Component {
   static contextTypes = {
     muiTheme: PropTypes.object.isRequired
   }
@@ -45,6 +41,4 @@ class Login extends Component {
         </div>
     );
   }
-
 }
-export default connect()(Login);

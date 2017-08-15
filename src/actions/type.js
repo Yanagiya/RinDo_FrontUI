@@ -2,21 +2,9 @@ export const FETCH_POSTS = 'blogposts/FETCH_POSTS';
 export const FETCH_POSTS_SUCCESS = 'blogposts/FETCH_POSTS_SUCCESS';
 export const FETCH_POSTS_FAILURE = 'blogposts/FETCH_POSTS_FAILURE';
 
-export const CREATE_POST = 'blogposts/CREATE_POST';
-export const CREATE_POST_SUCCESS = 'blogposts/CREATE_POST_SUCCESS';
-export const CREATE_POST_FAILURE = 'blogposts/CREATE_POST_FAILURE';
-
-export const READ_POST = 'blogposts/READ_POST';
-export const READ_POST_SUCCESS = 'blogposts/READ_POST_SUCCESS';
-export const READ_POST_FAILURE = 'blogposts/READ_POST_FAILURE';
-
-export const UPDATE_POST = 'blogposts/UPDATE_POST';
-export const UPDATE_POST_SUCCESS = 'blogposts/UPDATE_POST_SUCCESS';
-export const UPDATE_POST_FAILURE = 'blogposts/UPDATE_POST_FAILURE';
-
-export const REMOVE_POST = 'blogposts/REMOVE_POST';
-export const REMOVE_POST_SUCCESS = 'blogposts/REMOVE_POST_SUCCESS';
-export const REMOVE_POST_FAILURE = 'blogposts/REMOVE_POST_FAILURE';
+export const INIT_DRAFT = 'draft/INIT_DRAFT';
+export const EDIT_DRAFT = 'draft/EDIT_DRAFT';
+export const COMPLETE_DRAFT = 'draft/COMPLETE_DRAFT';
 
 export const UPDATE_ACCOUNT = 'account/UPDATE_ACCOUNT';
 

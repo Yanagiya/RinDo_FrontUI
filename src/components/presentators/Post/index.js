@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import { browserHistory } from 'react-router';
 import {
   Card,
   CardHeader,
@@ -25,7 +26,6 @@ export default class Post extends Component {
   }
 
   static contextTypes = {
-    history: PropTypes.object.isRequired,
     muiTheme: PropTypes.object
   }
 
@@ -64,7 +64,6 @@ export default class Post extends Component {
   }
 
   render() {
-    const { history } = this.context;
     const { actions, post, user } = this.props;
     const styles = this.getStyles();
 
@@ -92,7 +91,7 @@ export default class Post extends Component {
                     }>
             <MenuItem leftIcon={<EditorModeEdit />} primaryText='Edit'
                       onTouchTap={() => {
-                        history.pushState(null, `/post/${post.id}/edit`);
+                        browserHistory.push(`/post/${post.id}/edit`);
                       }}/>
             <MenuItem leftIcon={<ActionDelete />} primaryText='Remove'
                       onTouchTap={actions.removePost.bind(null, post)}/>
