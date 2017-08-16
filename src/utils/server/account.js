@@ -1,3 +1,4 @@
+import { SOCKET_EVENT } from '../../constants';
 
 export default class Account {
 
@@ -10,14 +11,14 @@ export default class Account {
   }
 
   register( userName, password ) {
-    this.socket.emit( "register", {
+    this.socket.emit( SOCKET_EVENT.REGISTER, {
       userName: userName,
       password: password,
     });
   }
 
   login( userName, password ) {
-    this.socket.emit( "login", {
+    this.socket.emit( SOCKET_EVENT.LOGIN, {
       userName: userName,
       password: password,
     });

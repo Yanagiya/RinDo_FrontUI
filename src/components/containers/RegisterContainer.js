@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import RegisterBefore from '../presentators/Register/before';
 import RegisterAfter from '../presentators/Register/after';
-import { REGISTER_BEFORE, REGISTER_AFTER} from '../../constants';
+import { REGISTER_STATE } from '../../constants';
 
 @connect(state => ({
   register: state.register,
@@ -27,13 +27,13 @@ export default class RegisterContainer extends Component {
     const styles = this.getStyles();
     const { register, dispatch } = this.props;
 
-    if ( register.condition === REGISTER_BEFORE ) {
+    if ( register.condition === REGISTER_STATE.BEFORE ) {
       return (
         <div>
           <RegisterBefore dispatch={dispatch}/>
         </div>
       );
-    } else if ( register.condition === REGISTER_AFTER ) {
+    } else if ( register.condition === REGISTER_STATE.AFTER ) {
       return (
         <div>
           <RegisterAfter register={register} />

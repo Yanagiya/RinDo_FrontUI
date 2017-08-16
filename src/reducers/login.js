@@ -1,8 +1,8 @@
 import * as types from '../actions/type';
-import { LOGIN_BEFORE, LOGIN_AFTER } from '../constants';
+import { LOGIN_STATE } from '../constants';
 
 const initialState = {
-  condition: LOGIN_BEFORE,
+  condition: LOGIN_STATE.BEFORE,
   result: null,
   userName: null,
   password: null,
@@ -16,7 +16,7 @@ export default ( state = initialState, action ) => {
       return initialState;
     case types.LOGIN_SUCCESS:
       return {
-        condition: LOGIN_AFTER,
+        condition: LOGIN_STATE.AFTER,
         result: true,
         userName: payload.userName,
         password: payload.password,
@@ -24,7 +24,7 @@ export default ( state = initialState, action ) => {
       };
     case types.LOGIN_FAILURE:
       return {
-        condition: LOGIN_AFTER,
+        condition: LOGIN_STATE.AFTER,
         result: false,
         userName: payload.userName,
         password: payload.password,

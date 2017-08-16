@@ -6,10 +6,15 @@ import { Paper, TextField, RaisedButton } from 'material-ui';
 import * as actions from '../../../actions';
 
 export default class DraftBody extends Component {
-  onSubmit(event, actions, payload) {
+  onSubmit( event ) {
     event.preventDefault();
 
-    this.props.dispatch( actions.completeDraft() );
+    const { dispatch } = this.props;
+    const title = this.refs.title.getValue();
+    const poster = this.refs.poster.files[0];
+    const body = this.refs.body.getValue();
+
+    dispatch( actions.completeDraft( title, poster, body ) );
     browserHistory.push('/');
   }
 
@@ -37,30 +42,20 @@ export default class DraftBody extends Component {
 
     const form = (
       <form style={styles.form}
-            onChange={({ target }) => {
-              updateDraft({ [target.name]: target.value });
-            }}
             onSubmit={this.onSubmit.bind(this)}>
         <TextField name='title'
+                   ref='title'
                    style={styles.textField}
                    hintText='title'
                    floatingLabelText='title'
                    value={draft.title}/>
-        <TextField name='subtitle'
-                   style={styles.textField}
-                   hintText='subtitle'
-                   floatingLabelText='subtitle'
-                   value={draft.subtitle}/>
-        <TextField name='poster'
-                   style={styles.textField}
-                   hintText='poster url'
-                   floatingLabelText='poster url'
-                   value={draft.poster}/>
         <TextField name='body' style={styles.textField}
+                   ref='body'
                    hintText='whats this about...?'
                    floatingLabelText='whats this about...?'
                    value={draft.body}
                    multiLine />
+        <input type='file' ref='poster' />
         <RaisedButton type='submit'
                       style={styles.submit}
                       label={'Save'}

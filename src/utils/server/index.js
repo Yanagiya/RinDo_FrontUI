@@ -28,6 +28,14 @@ class Server {
   logout() {
     this.account.logout();
   }
+
+  fetchPosts() {
+    this.post.fetchPosts();
+  }
+
+  sendDraft( postId, title, poster, body ) {
+    this.post.sendDraft( postId, title, poster, body );
+  }
 }
 
 const server = new Server();

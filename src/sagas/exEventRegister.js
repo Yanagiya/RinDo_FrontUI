@@ -2,13 +2,13 @@ import { eventChannel } from 'redux-saga';
 import { put, take, fork, call } from 'redux-saga/effects';
 
 import * as actions from '../actions';
-import { REGISTER_RESULT, LOGIN_RESULT } from '../constants';
+import { SOCKET_EVENT } from '../constants';
 import server from '../utils/server';
 
 function subscribe( socket ) {
   return eventChannel( emitter => {
-    eventCatcher( REGISTER_RESULT, socket, emitter );
-    eventCatcher( LOGIN_RESULT, socket, emitter );
+    eventCatcher( SOCKET_EVENT.REGISTER_RESULT, socket, emitter );
+    eventCatcher( SOCKET_EVENT.LOGIN_RESULT, socket, emitter );
     return () => {};
   });
 }
@@ -29,9 +29,9 @@ function* channelWatcher() {
   while (true) {
     const { event, data } = yield take(ch);
     switch ( event ) {
-      case REGISTER_RESULT:
+      case SOCKET_EVENT.REGISTER_RESULT:
         yield fork( registerResultProcess, data );
-      case LOGIN_RESULT:
+      case SOCKET_EVENT.LOGIN_RESULT:
         yield fork( loginResultProcess, data );
     }
   }

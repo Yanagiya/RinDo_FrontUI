@@ -1,3 +1,4 @@
+import { SOCKET_EVENT } from '../../constants';
 
 export default class Post {
 
@@ -9,17 +10,17 @@ export default class Post {
     this.socket = socket;
   }
 
-  register( userName, password ) {
-    this.socket.emit( "register", {
-      userName: userName,
-      password: password,
+  fetchPosts() {
+    this.socket.emit( SOCKET_EVENT.FETCH_POSTS, {
     });
   }
 
-  login( userName, password ) {
-    this.socket.emit( "login", {
-      userName: userName,
-      password: password,
+  sendDraft( postId, title, poster, body ) {
+    this.socket.emit( SOCKET_EVENT.SEND_DRAFT, {
+      postId: postId,
+      title: title,
+      poster: poster,
+      body: body,
     });
   }
 }

@@ -30,24 +30,23 @@ export const initDraft = () => {
   };
 };
 
-export const editDraft = ( title, subtitle, poster, body ) => {
+export const editDraft = ( title, poster, body ) => {
   return {
     type: types.EDIT_DRAFT,
     payload: {
       title: title,
-      subtitle: subtitle,
       poster: poster,
       body: body,
     },
   };
 };
 
-export const completeDraft = ( title, subtitle, poster, body ) => {
+export const completeDraft = ( postId, title, poster, body ) => {
   return {
     type: types.COMPLETE_DRAFT,
     payload: {
+      postId: postId,
       title: title,
-      subtitle: subtitle,
       poster: poster,
       body: body,
     },

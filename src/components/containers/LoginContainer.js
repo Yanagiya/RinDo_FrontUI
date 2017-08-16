@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import LoginBefore from '../presentators/Login/before';
 import LoginAfter from '../presentators/Login/after';
-import { LOGIN_BEFORE, LOGIN_AFTER} from '../../constants';
+import { LOGIN_STATE } from '../../constants';
 
 @connect(state => ({
   login: state.login,
@@ -27,13 +27,13 @@ export default class LoginContainer extends Component {
     const styles = this.getStyles();
     const { login, dispatch } = this.props;
 
-    if ( login.condition === LOGIN_BEFORE ) {
+    if ( login.condition === LOGIN_STATE.BEFORE ) {
       return (
         <div>
           <LoginBefore dispatch={dispatch}/>
         </div>
       );
-    } else if ( login.condition === LOGIN_AFTER ) {
+    } else if ( login.condition === LOGIN_STATE.AFTER ) {
       return (
         <div>
           <LoginAfter login={login} />

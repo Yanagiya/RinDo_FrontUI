@@ -1,8 +1,8 @@
 import * as types from '../actions/type';
-import { REGISTER_BEFORE, REGISTER_AFTER } from '../constants';
+import { REGISTER_STATE } from '../constants';
 
 const initialState = {
-  condition: REGISTER_BEFORE,
+  condition: REGISTER_STATE.BEFORE,
   result: null,
   userName: null,
   userId: null,
@@ -16,7 +16,7 @@ export default ( state = initialState, action ) => {
       return initialState;
     case types.REGISTER_SUCCESS:
       return {
-        condition: REGISTER_AFTER,
+        condition: REGISTER_STATE.AFTER,
         result: true,
         userName: payload.userName,
         password: payload.password,
@@ -24,7 +24,7 @@ export default ( state = initialState, action ) => {
       };
     case types.REGISTER_FAILURE:
       return {
-        condition: REGISTER_AFTER,
+        condition: REGISTER_STATE.AFTER,
         result: false,
         userName: payload.userName,
         password: payload.password,
