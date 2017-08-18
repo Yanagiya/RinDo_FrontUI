@@ -10,6 +10,13 @@ export const fetchPosts = ( start = 0, limit = 10 ) => {
   };
 };
 
+export const catchPosts = ( payload ) => {
+  return { 
+    type: types.CATCH_POSTS,
+    payload: payload,
+  };
+};
+
 export const fetchPostsSuccess = ( payload ) => {
   return {
     type: types.FETCH_POSTS_SUCCESS,

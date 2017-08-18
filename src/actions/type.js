@@ -1,6 +1,8 @@
-export const FETCH_POSTS = 'blogposts/FETCH_POSTS';
-export const FETCH_POSTS_SUCCESS = 'blogposts/FETCH_POSTS_SUCCESS';
-export const FETCH_POSTS_FAILURE = 'blogposts/FETCH_POSTS_FAILURE';
+export const FETCH_POSTS = 'posts/FETCH_POSTS';
+export const FETCH_POSTS_SUCCESS = 'posts/FETCH_POSTS_SUCCESS';
+export const FETCH_POSTS_FAILURE = 'posts/FETCH_POSTS_FAILURE';
+
+export const CATCH_POSTS = 'posts/CATCH_POSTS';
 
 export const INIT_DRAFT = 'draft/INIT_DRAFT';
 export const EDIT_DRAFT = 'draft/EDIT_DRAFT';

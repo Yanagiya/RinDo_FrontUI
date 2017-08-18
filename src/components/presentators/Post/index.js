@@ -15,6 +15,8 @@ import EditorModeEdit from 'material-ui/svg-icons/editor/mode-edit';
 import ActionDelete from 'material-ui/svg-icons/action/delete';
 import SocialShare from 'material-ui/svg-icons/social/share';
 
+import * as actions from '../../../actions';
+
 export default class Post extends Component {
   static propTypes = {
     actions: PropTypes.shape({
@@ -67,7 +69,8 @@ export default class Post extends Component {
     const { actions, post, user } = this.props;
     const styles = this.getStyles();
 
-    let title = <CardTitle title={post.title} subtitle={post.subtitle}/>;
+    let title = <CardTitle title={post.title} />;
+    //let title = <CardTitle title={post.title} subtitle={post.subtitle}/>;
 
     if (post.poster) {
       title = (
@@ -91,10 +94,8 @@ export default class Post extends Component {
                     }>
             <MenuItem leftIcon={<EditorModeEdit />} primaryText='Edit'
                       onTouchTap={() => {
-                        browserHistory.push(`/post/${post.id}/edit`);
+                        browserHistory.push(`/post/${post.postId}/edit`);
                       }}/>
-            <MenuItem leftIcon={<ActionDelete />} primaryText='Remove'
-                      onTouchTap={actions.removePost.bind(null, post)}/>
             <MenuItem leftIcon={<SocialShare />} primaryText='Share'/>
           </IconMenu>
         </CardHeader>

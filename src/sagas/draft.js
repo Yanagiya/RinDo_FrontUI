@@ -14,6 +14,6 @@ function* completeDraftEventWatcher() {
   yield* takeEvery( types.COMPLETE_DRAFT, completeDraft );
 }
 
-export function* cookieRootEventWatcher() {
-  yield fork( completeDraft );
+export function* draftRootEventWatcher() {
+  yield fork( completeDraftEventWatcher );
 }

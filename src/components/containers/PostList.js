@@ -15,14 +15,14 @@ export default class PostList extends Component {
 
   render() {
     const { blogposts, dispatch } = this.props;
-    const actions = bindActionCreators(BlogActions, dispatch);
 
     return (
       <div style={this.props.style}>
         {blogposts.map((post, i) =>
           <Post key={i}
                 post={post}
-                actions={actions}
+                actions={null}
+                dispatch={dispatch}
           />
         )}
       </div>
