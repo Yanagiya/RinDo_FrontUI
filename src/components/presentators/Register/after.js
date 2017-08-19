@@ -1,9 +1,7 @@
 import React, { PropTypes, Component } from 'react';
 import { Link } from 'react-router';
-import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { Paper, TextField, RaisedButton } from 'material-ui';
-import * as RegisterActions from '../../../redux/modules/register';
 
 class RegisterAfter extends Component {
   static propTypes = {
@@ -44,19 +42,21 @@ class RegisterAfter extends Component {
     if ( !register.result ) {
       return (
         <div style={styles.center}>
-          <p>registration failed</p>
-          <Link to={'/'} activeClassName="active">go back to top page</Link>
+          <Paper style={styles.paper}>
+            registration failed<br />
+            <Link to={'/'} activeClassName="active">go back to top page</Link>
+          </Paper>
         </div>
       );
     } else {
       return (
         <div style={styles.center}>
-          <p>
+          <Paper style={styles.paper}>
             registration success<br />
             user name: {this.props.register.userName}<br />
             user id: {this.props.register.userId}<br />
-          </p>
-          <Link to={'/'} activeClassName="active">go back to top page</Link>
+            <Link to={'/'} activeClassName="active">go back to top page</Link>
+          </Paper>
         </div>
       );
     }

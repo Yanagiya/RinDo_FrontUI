@@ -82,9 +82,9 @@ export const setAccountToCookie = ( userName, userId, password ) => {
   };
 };
 
-export const getAccountFromCookie = () => {
+export const updateAccountFromCookie = () => {
   return {
-    type: types.GET_ACCOUNT_FROM_COOKIE,
+    type: types.UPDATE_ACCOUNT_FROM_COOKIE,
   };
 };
 

@@ -2,7 +2,6 @@ import React, { Component, PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import Post from '../presentators/Post';
-import * as BlogActions from '../../redux/modules/blogposts';
 
 @connect(state => ({
   blogposts: state.blogposts,

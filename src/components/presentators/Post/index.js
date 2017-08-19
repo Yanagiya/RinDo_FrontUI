@@ -92,10 +92,6 @@ export default class Post extends Component {
                     iconButtonElement={
                       <IconButton><NavigationMoreVert /></IconButton>
                     }>
-            <MenuItem leftIcon={<EditorModeEdit />} primaryText='Edit'
-                      onTouchTap={() => {
-                        browserHistory.push(`/post/${post.postId}/edit`);
-                      }}/>
             <MenuItem leftIcon={<SocialShare />} primaryText='Share'/>
           </IconMenu>
         </CardHeader>

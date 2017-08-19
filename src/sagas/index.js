@@ -11,7 +11,7 @@ import { draftRootEventWatcher } from './draft';
 
 function* preprocessor() {
   yield put( actions.fetchPosts(0, 10) );
-  yield put( actions.getAccountFromCookie() );
+  yield put( actions.updateAccountFromCookie() );
 }
 
 export default function* rootSaga() {

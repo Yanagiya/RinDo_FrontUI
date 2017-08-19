@@ -1,6 +1,5 @@
 import React, { PropTypes, Component } from 'react';
 import { Link } from 'react-router';
-import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { Paper, TextField, RaisedButton } from 'material-ui';
 
@@ -43,19 +42,19 @@ export default class LoginAfter extends Component {
     if ( !login.result ) {
       return (
         <div style={styles.center}>
-          <p>login failed</p>
+          login failed<br />
           <Link to={'/'} activeClassName="active">go back to top page</Link>
         </div>
       );
     } else {
       return (
         <div style={styles.center}>
-          <p>
+          <Paper style={styles.paper}>
             login success<br />
             user name: {login.userName}<br />
             user id: {login.userId}<br />
-          </p>
-          <Link to={'/'} activeClassName="active">go back to top page</Link>
+            <Link to={'/'} activeClassName="active">go back to top page</Link>
+          </Paper>
         </div>
       );
     }

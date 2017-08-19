@@ -11,7 +11,7 @@ export const COMPLETE_DRAFT = 'draft/COMPLETE_DRAFT';
 export const UPDATE_ACCOUNT = 'account/UPDATE_ACCOUNT';
 
 export const SET_ACCOUNT_TO_COOKIE = 'cookie/SET_ACCOUNT_TO_COOKIE';
-export const GET_ACCOUNT_FROM_COOKIE = 'cookie/GET_ACCOUNT_FROM_COOKIE';
+export const UPDATE_ACCOUNT_FROM_COOKIE = 'cookie/UPDATE_ACCOUNT_FROM_COOKIE';
 
 export const REGISTER_INIT = 'register/REGISTER_INIT';
 export const REGISTER_SEND = 'register/REGISTER_SEND';

@@ -41,9 +41,6 @@ function* channelWatcher() {
 }
 
 function* catchPostsProcess( data ) {
-  console.log("## catchPostsProcess ##");
-  console.log(data);
-  console.log("#######################");
   yield put( actions.catchPosts( data ) );  
 }
 
