@@ -10,20 +10,20 @@ function* setAccountToCookie( action ) {
   cookie.setAccountToCookie( userName, userId, password );
 }
 
-function* getAccountFromCookie() {
+function* updateAccountFromCookie() {
   const { userName, userId, password } = cookie.getAccountFromCookie();
-  yield put( actions.updateAccount( userName, userId, password ) );
+  yield put( actions.loginSend( userName, password ) );
 }
 
 function* setAccountToCookieEventWatcher() {
   yield* takeEvery( types.SET_ACCOUNT_TO_COOKIE, setAccountToCookie );
 }
 
-function* getAccountFromCookieEventWatcher() {
-  yield* takeEvery( types.GET_ACCOUNT_FROM_COOKIE, getAccountFromCookie );
+function* updateAccountFromCookieEventWatcher() {
+  yield* takeEvery( types.UPDATE_ACCOUNT_FROM_COOKIE, updateAccountFromCookie );
 }
 
 export function* cookieRootEventWatcher() {
   yield fork( setAccountToCookieEventWatcher );
-  yield fork( getAccountFromCookieEventWatcher );
+  yield fork( updateAccountFromCookieEventWatcher );
 }

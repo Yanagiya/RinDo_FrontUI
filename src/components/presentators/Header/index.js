@@ -7,7 +7,7 @@ import MenuItem from 'material-ui/MenuItem';
 import NavigationMoreVert from 'material-ui/svg-icons/navigation/more-vert';
 import ActionAccountCicle from 'material-ui/svg-icons/action/account-circle';
 import SocialGithub from './GitHub-Mark-Light-120px-plus.png';
-import * as actions from '../../actions';
+import * as actions from '../../../actions';
 
 export default class Header extends Component {
   getStyles() {
@@ -32,6 +32,21 @@ export default class Header extends Component {
         textAligh: 'center'
       }
     };
+  }
+
+  getRegisterItem( account ) {
+    if ( account.userName == 'null' || account.userName == null ) {
+      return (
+        <MenuItem leftIcon={<ActionAccountCicle />} 
+                  primaryText='Register'
+                  onTouchTap={() => {
+                    browserHistory.push('/register');
+                    this.props.dispatch( actions.registerInit() );
+                  }} 
+        />
+      );
+    }
+    return;
   }
 
   getLoginItem( account ) {
@@ -60,6 +75,7 @@ export default class Header extends Component {
     const styles = this.getStyles();
     const { title, account, dispatch } = this.props;
 
+    const registerItem = this.getRegisterItem( account );
     const loginItem = this.getLoginItem( account );
 
     const iconElementRight = (
@@ -71,13 +87,7 @@ export default class Header extends Component {
                     </IconButton>
                   }
         >
-          <MenuItem leftIcon={<ActionAccountCicle />} 
-                    primaryText='Register'
-                    onTouchTap={() => {
-                      browserHistory.push('/register');
-                      this.props.dispatch( actions.registerInit() );
-                    }} 
-          />
+          {registerItem}
           {loginItem}
           <MenuItem primaryText="Refresh" />
           <MenuItem primaryText="Help &amp; feedback" />

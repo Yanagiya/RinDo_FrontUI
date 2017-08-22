@@ -6,16 +6,24 @@ import { Paper, TextField, RaisedButton } from 'material-ui';
 import * as actions from '../../../actions';
 
 export default class DraftBody extends Component {
+  onload( event ) {
+    const { dispatch } = this.props;
+    const title = this.refs.title.getValue();
+    const poster = event.target.result;
+    const body = this.refs.body.getValue();
+
+    dispatch( actions.completeDraft( null, title, poster, body ) );
+    browserHistory.push('/');
+  }
+
   onSubmit( event ) {
     event.preventDefault();
 
-    const { dispatch } = this.props;
-    const title = this.refs.title.getValue();
     const poster = this.refs.poster.files[0];
-    const body = this.refs.body.getValue();
+    const reader = new FileReader();
+    reader.onload = this.onload.bind(this);
 
-    dispatch( actions.completeDraft( title, poster, body ) );
-    browserHistory.push('/');
+    reader.readAsDataURL( poster );
   }
 
   getStyles() {
@@ -55,7 +63,7 @@ export default class DraftBody extends Component {
                    floatingLabelText='whats this about...?'
                    value={draft.body}
                    multiLine />
-        <input type='file' ref='poster' />
+        <input type='file' ref='poster' accept='image/*' />
         <RaisedButton type='submit'
                       style={styles.submit}
                       label={'Save'}

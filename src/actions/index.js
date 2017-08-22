@@ -10,6 +10,13 @@ export const fetchPosts = ( start = 0, limit = 10 ) => {
   };
 };
 
+export const catchPosts = ( payload ) => {
+  return { 
+    type: types.CATCH_POSTS,
+    payload: payload,
+  };
+};
+
 export const fetchPostsSuccess = ( payload ) => {
   return {
     type: types.FETCH_POSTS_SUCCESS,
@@ -75,9 +82,9 @@ export const setAccountToCookie = ( userName, userId, password ) => {
   };
 };
 
-export const getAccountFromCookie = () => {
+export const updateAccountFromCookie = () => {
   return {
-    type: types.GET_ACCOUNT_FROM_COOKIE,
+    type: types.UPDATE_ACCOUNT_FROM_COOKIE,
   };
 };
 

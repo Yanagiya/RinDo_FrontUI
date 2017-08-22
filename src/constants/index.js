@@ -9,13 +9,14 @@ export const LOGIN_STATE = {
 };
 
 export const SOCKET_EVENT = {
-  RIGISTER: 'register',
+  REGISTER: 'register',
   REGISTER_RESULT: 'registerResult',
 
   LOGIN: 'login',
   LOGIN_RESULT: 'loginResult',
 
   FETCH_POSTS: 'fetchPosts',
+  CATCH_POSTS: 'catchPosts',
   SEND_DRAFT: 'sendDraft',
 };
 

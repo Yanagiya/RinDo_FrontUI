@@ -7,6 +7,8 @@ export default ( state = initialState, action ) => {
   switch ( type ) {
     case types.FETCH_POSTS_SUCCESS:
       return [...payload];
+    case types.CATCH_POSTS:
+      return [...payload];
     default:
       return state;
   }
