@@ -29,7 +29,6 @@ export default class BlogBody extends Component {
       postList: {
 		blexBasis: 0,
 		flexDirection: "row",
-		background: "yellow",
         width: 400,
         float: "right",
       }
