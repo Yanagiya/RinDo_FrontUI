@@ -54,7 +54,12 @@ export default class RegisterBefore extends Component {
                        type='password'
                        defaultValue=''
                        onKeyDown={this.submit.bind(this)} /><br />
-            <RaisedButton style={styles.submit}
+            <TextField ref='mailaddress'
+                       hintText='mailaddress'
+                       floatingLabelText='mailaddress'
+                       defaultValue=''
+                       onKeyDown={this.submit.bind(this)} /><br/>
+           <RaisedButton style={styles.submit}
                           label='Submit'
                           onTouchTap={this.submit.bind(this)}
                           primary />
@@ -66,6 +71,7 @@ export default class RegisterBefore extends Component {
   submit(event) {
     const identity = this.refs.identity.getValue();
     const password = this.refs.password.getValue();
+    const mailaddress = this.refs.mailaddress.getValue();
 
     if (event.type === 'keydown' && event.keyCode !== 13) return;
 

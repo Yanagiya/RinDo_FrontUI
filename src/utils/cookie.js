@@ -41,21 +41,24 @@ function getCookie( name ) {
 
 class Cookie {
 
-  setAccountToCookie( userName, userId, password ) {
+  setAccountToCookie( userName, userId, password, mailaddress ) {
     setCookie( "userName", userName );  
     setCookie( "userId",   userId );  
     setCookie( "password", password );  
+    setCookie( "mailaddress", mailaddress);
   }
 
   getAccountFromCookie(){
     const userName = getCookie( "userName" );
     const userId   = getCookie( "userId" );
     const password = getCookie( "password" );
+    const mailaddress = mailaddress( "mailaddress" );
 
     return {
       userName: userName,
       userId:   userId,
       password: password,
+      mailaddress: mailaddress
     };
   }
 }

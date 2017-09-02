@@ -6,7 +6,7 @@ import * as types from '../actions/type';
 import server from '../utils/server';
 
 function* registerSend( action ) {
-  const { userName, password } = action.payload;
+  const { userName, password, mailaddress } = action.payload;
   server.register( userName, password );
 }
 

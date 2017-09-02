@@ -17,8 +17,8 @@ class Server {
     this.post = new Post({ socket: this.socket });
   }
 
-  register( userName, password ) {
-    this.account.register(userName, password);
+  register( userName, password, mailaddress ) {
+    this.account.register(userName, password, mailaddress );
   }
 
   login( userName, password ) {
