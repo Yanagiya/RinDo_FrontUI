@@ -21,8 +21,8 @@ class Server {
     this.account.register(userName, password, mailaddress );
   }
 
-  login( userName, password ) {
-    this.account.login(userName, password);
+  login( mailaddress, password) {
+    this.account.login(mailaddress, password);
   }
 
   logout() {

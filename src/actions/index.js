@@ -136,13 +136,13 @@ export const loginInit = () => {
   };
 };
 
-export const loginSend = ( userName, password, mailaddress ) => {
+export const loginSend = ( mailaddress, password ) => {
   return {
     type: types.LOGIN_SEND,
     payload: {
-      userName: userName,
+      mailaddress: mailaddress, 
       password: password,
-      mailaddress: mailaddress
+     
     },
   };
 };

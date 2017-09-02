@@ -75,6 +75,6 @@ export default class RegisterBefore extends Component {
 
     if (event.type === 'keydown' && event.keyCode !== 13) return;
 
-    this.props.dispatch( actions.registerSend( identity, password ) );
+    this.props.dispatch( actions.registerSend( identity, password, mailaddress ) );
   }
 }

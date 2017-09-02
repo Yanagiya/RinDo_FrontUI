@@ -52,7 +52,7 @@ class Cookie {
     const userName = getCookie( "userName" );
     const userId   = getCookie( "userId" );
     const password = getCookie( "password" );
-    const mailaddress = mailaddress( "mailaddress" );
+    const mailaddress = getCookie( "mailaddress" );
 
     return {
       userName: userName,
