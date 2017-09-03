@@ -87,7 +87,7 @@ export default class Post extends Component {
     return (
       <Card style={styles.card}>
         <CardHeader title={post.userName}
-                    avatar={post.userAvator}>
+                    avatar={post.userIcon}>
           <IconMenu style={styles.iconMenu}
                     iconButtonElement={
                       <IconButton><NavigationMoreVert /></IconButton>

@@ -10,6 +10,7 @@ function* registerSend( action ) {
     userName, 
     password, 
     email,
+    userIcon,
     country1, 
     country2, 
     country3 
@@ -19,6 +20,7 @@ function* registerSend( action ) {
     userName, 
     password, 
     email, 
+    userIcon,
     country1,
     country2,
     country3
