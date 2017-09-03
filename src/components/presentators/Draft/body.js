@@ -7,12 +7,18 @@ import * as actions from '../../../actions';
 
 export default class DraftBody extends Component {
   onload( event ) {
-    const { dispatch } = this.props;
-    const title = this.refs.title.getValue();
-    const poster = event.target.result;
-    const body = this.refs.body.getValue();
+    const { dispatch, userId } = this.props;
+    const draftData = {
+      postId: null,
+      title: this.refs.title.getValue(),
+      poster: event.target.result,
+      body: this.refs.body.getValue(),
+      userId: userId,
+      country: "India",
+      goodPoint: 0,
+    };
 
-    dispatch( actions.completeDraft( null, title, poster, body ) );
+    dispatch( actions.completeDraft( draftData ) );
     browserHistory.push('/');
   }
 

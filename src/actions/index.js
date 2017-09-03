@@ -48,15 +48,10 @@ export const editDraft = ( title, poster, body ) => {
   };
 };
 
-export const completeDraft = ( postId, title, poster, body ) => {
+export const completeDraft = ( draftData ) => {
   return {
     type: types.COMPLETE_DRAFT,
-    payload: {
-      postId: postId,
-      title: title,
-      poster: poster,
-      body: body,
-    },
+    payload: draftData,
   };
 };
 

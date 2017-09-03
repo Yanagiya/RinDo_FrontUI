@@ -71,9 +71,9 @@ export default class RegisterBefore extends Component {
   submit(event) {
     const identity = this.refs.identity.getValue();
     const password = this.refs.password.getValue();
-    const country1 = -1;
-    const country2 = -1;
-    const country3 = -1;
+    const country1 = "India";
+    const country2 = "India";
+    const country3 = "India";
     const email    = this.refs.email.getValue();
 
     if (event.type === 'keydown' && event.keyCode !== 13) return;
