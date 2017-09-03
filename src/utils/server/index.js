@@ -17,11 +17,12 @@ class Server {
     this.post = new Post({ socket: this.socket });
   }
 
-  register( userName, password, email, country1, country2, country3 ) {
+  register( userName, password, email, userIcon, country1, country2, country3 ) {
     this.account.register(
       userName, 
       password, 
       email,
+      userIcon,
       country1,
       country2,
       country3
