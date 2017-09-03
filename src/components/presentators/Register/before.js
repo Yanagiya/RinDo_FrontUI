@@ -54,9 +54,9 @@ export default class RegisterBefore extends Component {
                        type='password'
                        defaultValue=''
                        onKeyDown={this.submit.bind(this)} /><br />
-            <TextField ref='mailaddress'
-                       hintText='mailaddress'
-                       floatingLabelText='mailaddress'
+            <TextField ref='email'
+                       hintText='email'
+                       floatingLabelText='email'
                        defaultValue=''
                        onKeyDown={this.submit.bind(this)} /><br/>
            <RaisedButton style={styles.submit}
@@ -71,10 +71,20 @@ export default class RegisterBefore extends Component {
   submit(event) {
     const identity = this.refs.identity.getValue();
     const password = this.refs.password.getValue();
-    const mailaddress = this.refs.mailaddress.getValue();
+    const country1 = -1;
+    const country2 = -1;
+    const country3 = -1;
+    const email    = this.refs.email.getValue();
 
     if (event.type === 'keydown' && event.keyCode !== 13) return;
 
-    this.props.dispatch( actions.registerSend( identity, password, mailaddress ) );
+    this.props.dispatch( actions.registerSend({
+      userName: identity, 
+      password: password, 
+      email: email, 
+      country1: country1,
+      country2: country2,
+      country3: country3,
+    }) );
   }
 }

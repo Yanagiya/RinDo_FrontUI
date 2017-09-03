@@ -6,20 +6,31 @@ import * as types from '../actions/type';
 import server from '../utils/server';
 
 function* loginSend( action ) {
-  const { userName, password } = action.payload;
-  server.login( userName, password );
+  const { email, password } = action.payload;
+  server.login( email, password );
 }
 
 function* loginSuccess( action ) {
-  const { userName, userId, password } = action.payload;
-  yield put( actions.updateAccount( userName, userId, password ) );
-  yield put( actions.setAccountToCookie( userName, userId, password ) );
+  const userData = action.payload;
+  yield put( actions.updateAccount( userData ) );
+  yield put( actions.setAccountToCookie( userData ) );
 }
 
 function* logout() {
   server.logout();
-  yield put( actions.updateAccount( null, null, null ) );
-  yield put( actions.setAccountToCookie( null, null, null ) );
+  const userData = {
+    userName: null,
+    userId: null,
+    password: null,
+    email: null,
+    country1: null,
+    country2: null,
+    country3: null,
+    postNumber: null,
+    evalPoint: null,
+  };
+  yield put( actions.updateAccount( userData ) );
+  yield put( actions.setAccountToCookie( userData ) );
 }
 
 function* loginSendEventWatcher() {

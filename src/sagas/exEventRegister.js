@@ -32,10 +32,13 @@ function* channelWatcher() {
     switch ( event ) {
       case SOCKET_EVENT.CATCH_POSTS:
         yield fork( catchPostsProcess, data );
+        break;
       case SOCKET_EVENT.REGISTER_RESULT:
         yield fork( registerResultProcess, data );
+        break;
       case SOCKET_EVENT.LOGIN_RESULT:
         yield fork( loginResultProcess, data );
+        break;
     }
   }
 }
@@ -45,22 +48,22 @@ function* catchPostsProcess( data ) {
 }
 
 function* registerResultProcess( data ) {
-  const { result, userName, userId, password } = data;
+  const { result } = data;
 
   if (result) {
-    yield put( actions.registerSuccess( userName, userId, password ) );
+    yield put( actions.registerSuccess( data ) );
   } else {
-    yield put( actions.registerFailure( userName, password ) );
+    yield put( actions.registerFailure( data ) );
   }
 }
 
 function* loginResultProcess( data ) {
-  const { result, userName, userId, password } = data;
+  const { result } = data;
 
   if (result) {
-    yield put( actions.loginSuccess( userName, userId, password ) );
+    yield put( actions.loginSuccess( data ) );
   } else {
-    yield put( actions.loginFailure( userName, password ) );
+    yield put( actions.loginFailure( data ) );
   }
 }
 

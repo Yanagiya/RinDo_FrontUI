@@ -6,8 +6,23 @@ import * as types from '../actions/type';
 import server from '../utils/server';
 
 function* registerSend( action ) {
-  const { userName, password, mailaddress } = action.payload;
-  server.register( userName, password );
+  const { 
+    userName, 
+    password, 
+    email,
+    country1, 
+    country2, 
+    country3 
+  } = action.payload;
+
+  server.register( 
+    userName, 
+    password, 
+    email, 
+    country1,
+    country2,
+    country3
+  );
 }
 
 function* registerSendEventWatcher() {
