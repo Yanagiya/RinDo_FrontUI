@@ -40,8 +40,8 @@ class Server {
     this.post.fetchPosts();
   }
 
-  sendDraft( postId, title, poster, body ) {
-    this.post.sendDraft( postId, title, poster, body );
+  sendDraft( postId, title, poster, body, userId, country, goodPoint ) {
+    this.post.sendDraft( postId, title, poster, body, userId, country, goodPoint );
   }
 }
 

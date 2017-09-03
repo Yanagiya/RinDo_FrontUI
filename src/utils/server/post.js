@@ -15,12 +15,15 @@ export default class Post {
     });
   }
 
-  sendDraft( postId, title, poster, body ) {
+  sendDraft( postId, title, poster, body, userId, country, goodPoint ) {
     this.socket.emit( SOCKET_EVENT.SEND_DRAFT, {
       postId: postId,
       title: title,
       poster: poster,
       body: body,
+      userId: userId,
+      country: country,
+      goodPoint,
     });
   }
 }
