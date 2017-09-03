@@ -5,14 +5,18 @@ const initialState = {
   condition: REGISTER_STATE.BEFORE,
   result: null,
   userName: null,
-  userId: null,
   password: null,
+  email: null,
+  country1: null,
+  country2: null,
+  country3: null,
 };
 
 export default ( state = initialState, action ) => {
   const { type, payload } = action;
   switch ( type ) {
     case types.REGISTER_INIT:
+      console.log("## register_init ##");
       return initialState;
     case types.REGISTER_SUCCESS:
       return {
@@ -20,7 +24,10 @@ export default ( state = initialState, action ) => {
         result: true,
         userName: payload.userName,
         password: payload.password,
-        userId: payload.userId,
+        email: payload.email,
+        country1: payload.country1,
+        country2: payload.country2,
+        country3: payload.country3,
       };
     case types.REGISTER_FAILURE:
       return {
@@ -28,7 +35,10 @@ export default ( state = initialState, action ) => {
         result: false,
         userName: payload.userName,
         password: payload.password,
-        userId: null,
+        email: payload.email,
+        country1: payload.country1,
+        country2: payload.country2,
+        country3: payload.country3,
       };
     default:
       return state;

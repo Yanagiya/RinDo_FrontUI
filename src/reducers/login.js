@@ -4,9 +4,8 @@ import { LOGIN_STATE } from '../constants';
 const initialState = {
   condition: LOGIN_STATE.BEFORE,
   result: null,
-  userName: null,
+  email: null,
   password: null,
-  userId: null,
 };
 
 export default ( state = initialState, action ) => {
@@ -18,17 +17,15 @@ export default ( state = initialState, action ) => {
       return {
         condition: LOGIN_STATE.AFTER,
         result: true,
-        userName: payload.userName,
+        email: payload.email,
         password: payload.password,
-        userId: payload.userId,
       };
     case types.LOGIN_FAILURE:
       return {
         condition: LOGIN_STATE.AFTER,
         result: false,
-        userName: payload.userName,
+        email: payload.email,
         password: payload.password,
-        userId: null,
       };
     case types.LOGOUT:
       return initialState;

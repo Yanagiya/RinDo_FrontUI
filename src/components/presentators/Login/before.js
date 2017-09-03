@@ -43,9 +43,9 @@ export default class LoginBefore extends Component {
         <div style={styles.center}>
           <Paper style={styles.paper}>
             <ActionAccountCicle style={{ height: 100, width: 100 }}/><br/>
-            <TextField ref='identity'
-                       hintText='user name'
-                       floatingLabelText='user name'
+            <TextField ref='email'
+                       hintText='email'
+                       floatingLabelText='email'
                        defaultValue=''
                        onKeyDown={this.submit.bind(this)} /><br/>
             <TextField ref='password'
@@ -64,12 +64,12 @@ export default class LoginBefore extends Component {
   }
 
   submit(event) {
-    const identity = this.refs.identity.getValue();
+    const email    = this.refs.email.getValue();
     const password = this.refs.password.getValue();
 
     if (event.type === 'keydown' && event.keyCode !== 13) return;
 
-    this.props.dispatch( actions.loginSend( identity, password ) );
+    this.props.dispatch( actions.loginSend({ email: email, password: password }) );
 
   }
 }

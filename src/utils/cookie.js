@@ -1,4 +1,8 @@
 function setCookie( name, value ) {
+  if ( value === void 0 ) {
+    value = null;
+  }
+
   var path = location.pathname;
   // pathをフォルダ毎に指定する場合のIE対策
   var paths = new Array();
@@ -41,21 +45,24 @@ function getCookie( name ) {
 
 class Cookie {
 
-  setAccountToCookie( userName, userId, password ) {
+  setAccountToCookie( userName, userId, password, email ) {
     setCookie( "userName", userName );  
     setCookie( "userId",   userId );  
     setCookie( "password", password );  
+    setCookie( "email", email );
   }
 
   getAccountFromCookie(){
     const userName = getCookie( "userName" );
     const userId   = getCookie( "userId" );
     const password = getCookie( "password" );
+    const email    = getCookie( "email" );
 
     return {
       userName: userName,
       userId:   userId,
       password: password,
+      email:    email,
     };
   }
 }

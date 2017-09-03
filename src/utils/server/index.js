@@ -17,12 +17,19 @@ class Server {
     this.post = new Post({ socket: this.socket });
   }
 
-  register( userName, password ) {
-    this.account.register(userName, password);
+  register( userName, password, email, country1, country2, country3 ) {
+    this.account.register(
+      userName, 
+      password, 
+      email,
+      country1,
+      country2,
+      country3
+    );
   }
 
-  login( userName, password ) {
-    this.account.login(userName, password);
+  login( email, password) {
+    this.account.login( email, password );
   }
 
   logout() {

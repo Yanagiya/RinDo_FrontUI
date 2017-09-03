@@ -10,7 +10,7 @@ import { cookieRootEventWatcher } from './cookie';
 import { draftRootEventWatcher } from './draft';
 
 function* preprocessor() {
-  yield put( actions.fetchPosts(0, 10) );
+  //yield put( actions.fetchPosts(0, 10) );
   yield put( actions.updateAccountFromCookie() );
 }
 

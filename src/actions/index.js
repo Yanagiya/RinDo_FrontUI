@@ -60,25 +60,17 @@ export const completeDraft = ( postId, title, poster, body ) => {
   };
 };
 
-export const updateAccount = ( userName, userId, password ) => {
+export const updateAccount = ( userData ) => {
   return {
     type: types.UPDATE_ACCOUNT,
-    payload: {
-      userName: userName,
-      userId: userId,
-      password: password,
-    },
+    payload: userData,
   };
 };
 
-export const setAccountToCookie = ( userName, userId, password ) => {
+export const setAccountToCookie = ( userData ) => {
   return {
     type: types.SET_ACCOUNT_TO_COOKIE,
-    payload: {
-      userName: userName,
-      userId: userId,
-      password: password,
-    },
+    payload: userData, 
   };
 };
 
@@ -94,34 +86,24 @@ export const registerInit = () => {
   };
 };
 
-export const registerSend = ( userName, password ) => {
+export const registerSend = ( userData ) => {
   return {
     type: types.REGISTER_SEND,
-    payload: {
-      userName: userName,
-      password: password,
-    },
+    payload: userData,
   };
 };
 
-export const registerSuccess = ( userName, userId, password ) => {
+export const registerSuccess = ( userData ) => {
   return {
     type: types.REGISTER_SUCCESS,
-    payload: {
-      userName: userName,
-      userId: userId,
-      password: password,
-    },
+    payload: userData,
   };
 };
 
-export const registerFailure = ( userName, password ) => {
+export const registerFailure = ( userData ) => {
   return {
     type: types.REGISTER_FAILURE,
-    payload: {
-      userName: userName,
-      password: password,
-    },
+    payload: userData,
   };
 };
 
@@ -131,34 +113,24 @@ export const loginInit = () => {
   };
 };
 
-export const loginSend = ( userName, password ) => {
+export const loginSend = ( userData ) => {
   return {
     type: types.LOGIN_SEND,
-    payload: {
-      userName: userName,
-      password: password,
-    },
+    payload: userData,
   };
 };
 
-export const loginSuccess = ( userName, userId, password ) => {
+export const loginSuccess = ( userData ) => {
   return {
     type: types.LOGIN_SUCCESS,
-    payload: {
-      userName: userName,
-      userId: userId,
-      password: password,
-    },
+    payload: userData,
   };
 };
 
-export const loginFailure = ( userName, password ) => {
+export const loginFailure = ( userData ) => {
   return {
     type: types.LOGIN_FAILURE,
-    payload: {
-      userName: userName,
-      password: password,
-    },
+    payload: userData,
   };
 };
 

@@ -3,17 +3,17 @@ import React, { Component, PropTypes } from 'react';
 export default class MainMap extends Component {
   
   constructor(props) {
-	super(props);
-	google.charts.load('current', {
+    super(props);
+    google.charts.load('current', {
       'packages':['geochart'],
       'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
     });
     google.charts.setOnLoadCallback(drawRegionsMap);
-	console.log("#####passing#############")
+    console.log("#####passing#############")
     function drawRegionsMap() {
       var data = google.visualization.arrayToDataTable([
         ['Country', 'Popularity'],
-		['Germany', 200],
+        ['Germany', 200],
         ['United States', 300],
         ['Brazil', 400],
         ['Canada', 500],
@@ -21,7 +21,7 @@ export default class MainMap extends Component {
         ['RU', 700]
       ]);
           
-	  var options = {
+      var options = {
         backgroundColor: '#81d4fa'
       };
       var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
@@ -29,12 +29,12 @@ export default class MainMap extends Component {
     }
   }
   getStyles() {
-	return {
-	  map: {
-		padding: 20,
- 		width: 700,
-	  }
-	}
+    return {
+      map: {
+      padding: 20,
+      width: 700,
+      }
+    }
   }
   
   render() {
@@ -44,7 +44,7 @@ export default class MainMap extends Component {
         <input type="text" style={this.props.style}/>
         <input type="button" value="Search"/>
         <div id="regions_div" style={styles.map}>
-		</div>
+        </div>
       </div>
     );
   }
