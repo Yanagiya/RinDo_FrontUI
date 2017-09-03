@@ -6,13 +6,13 @@ import * as types from '../actions/type';
 import cookie from '../utils/cookie';
 
 function* setAccountToCookie( action ) {
-  const { userName, userId, password } = action.payload;
-  cookie.setAccountToCookie( userName, userId, password );
+  const { userName, userId, password, email } = action.payload;
+  cookie.setAccountToCookie( userName, userId, password, email );
 }
 
 function* updateAccountFromCookie() {
-  const { userName, userId, password } = cookie.getAccountFromCookie();
-  yield put( actions.loginSend( userName, password ) );
+  const { userName, userId, password, email } = cookie.getAccountFromCookie();
+  yield put( actions.loginSend({ email, password }) );
 }
 
 function* setAccountToCookieEventWatcher() {

@@ -17,12 +17,20 @@ class Server {
     this.post = new Post({ socket: this.socket });
   }
 
-  register( userName, password, mailaddress ) {
-    this.account.register(userName, password, mailaddress );
+  register( userName, password, email, userIcon, country1, country2, country3 ) {
+    this.account.register(
+      userName, 
+      password, 
+      email,
+      userIcon,
+      country1,
+      country2,
+      country3
+    );
   }
 
-  login( userName, password ) {
-    this.account.login(userName, password);
+  login( email, password) {
+    this.account.login( email, password );
   }
 
   logout() {
@@ -33,8 +41,8 @@ class Server {
     this.post.fetchPosts();
   }
 
-  sendDraft( postId, title, poster, body ) {
-    this.post.sendDraft( postId, title, poster, body );
+  sendDraft( postId, title, poster, body, userId, country, goodPoint ) {
+    this.post.sendDraft( postId, title, poster, body, userId, country, goodPoint );
   }
 }
 

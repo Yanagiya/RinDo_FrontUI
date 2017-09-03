@@ -66,7 +66,7 @@ export default class Post extends Component {
   }
 
   render() {
-    const { actions, post, user } = this.props;
+    const { actions, post } = this.props;
     const styles = this.getStyles();
 
     let title = <CardTitle title={post.title} />;
@@ -86,8 +86,8 @@ export default class Post extends Component {
 
     return (
       <Card style={styles.card}>
-        <CardHeader title={`${user.firstname} ${user.lastname}`}
-                    avatar={user.avatar}>
+        <CardHeader title={post.userName}
+                    avatar={post.userIcon}>
           <IconMenu style={styles.iconMenu}
                     iconButtonElement={
                       <IconButton><NavigationMoreVert /></IconButton>

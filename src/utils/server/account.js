@@ -10,16 +10,21 @@ export default class Account {
     this.socket = socket;
   }
 
-  register( userName, password ) {
+  register( userName, password, email, userIcon, country1, country2, country3 ) {
     this.socket.emit( SOCKET_EVENT.REGISTER, {
       userName: userName,
       password: password,
+      email: email,
+      userIcon: userIcon,
+      country1: country1,
+      country2: country2,
+      country3: country3,
     });
   }
 
-  login( userName, password ) {
+  login( email, password ) {
     this.socket.emit( SOCKET_EVENT.LOGIN, {
-      userName: userName,
+      email: email,
       password: password,
     });
   }
@@ -29,6 +34,7 @@ export default class Account {
       userName: null,
       userId: null,
       password: null,
+      email: null,
     };
   }
 }
