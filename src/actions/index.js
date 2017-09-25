@@ -135,3 +135,9 @@ export const logout = () => {
   };
 };
 
+export const initRegion = () => {
+  return {
+    type: types.REGION_INIT,
+  };
+}
+

@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import Header from '../presentators/Header';
 import Footer from '../presentators/Footer';
+import { Link } from 'react-router';
 
 @connect(state => ({
 	account: state.account,
