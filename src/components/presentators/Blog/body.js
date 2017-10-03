@@ -11,24 +11,24 @@ import * as actions from '../../../actions';
 export default class BlogBody extends Component {
   getStyles() {
     return {
-	  section: {
-		display:"flex"
-	  },
+	    section: {
+        justifyContent: 'center',
+	    },
       addContent: {
         position: 'fixed',
         right: 20,
         bottom: 20,
-        zIndex: 100
+        Index: 100
       },
       mainMap: {
-		flexBasis: 0,
-		flexDirection: "row",
+		    flexBasis: 0,
+		    flexDirection: "row",
         width: 700,
         float: "left",
       },
       postList: {
-		blexBasis: 0,
-		flexDirection: "row",
+		    blexBasis: 0,
+		    flexDirection: "row",
         width: 400,
         float: "right",
       }

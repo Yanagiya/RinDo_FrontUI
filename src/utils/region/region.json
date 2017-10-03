@@ -1,0 +1,939 @@
+{
+  "world": [
+    {
+      "num": 1,
+      "name": "アフガニスタン",
+      "call": "Afghanistan"
+    },
+    {
+      "num": 2,
+      "name": "アルバニア",
+      "call": "Albania"
+    },
+    {
+      "num": 3,
+      "name": "アルジェリア",
+      "call": "Algeria"
+    },
+    {
+      "num": 4,
+      "name": "アフガニスタン",
+      "call": "Andorra"
+    },
+    {
+      "num": 5,
+      "name": "アンゴラ",
+      "call": "Angola"
+    },
+    {
+      "num": 6,
+      "name": "南極大陸",
+      "call": "Antarctica"
+    },
+    {
+      "num": 7,
+      "name": "北極",
+      "call": "Arctic"
+    },
+    {
+      "num": 8,
+      "name": "アルジェリア",
+      "call": "Argentina"
+    },
+    {
+      "num": 9,
+      "name": "アルメニア",
+      "call": "Armenia"
+    },
+    {
+      "num": 10,
+      "name": "オーストラリア",
+      "call": "Australia"
+    },
+    {
+      "num": 11,
+      "name": "オーストリア",
+      "call": "Austria"
+    },
+    {
+      "num": 12,
+      "name": "アゼルバイジャン",
+      "call": "Azerbaijan"
+    },
+    {
+      "num": 13,
+      "name": "バハマ",
+      "call": "Bahamas"
+    },
+    {
+      "num": 14,
+      "name": "バーレーン",
+      "call": "Bahrain"
+    },
+    {
+      "num": 15,
+      "name": "バングラデシュ",
+      "call": "Bangladesh"
+    },
+    {
+      "num": 16,
+      "name": "バルバドス",
+      "call": "Barbados"
+    },
+    {
+      "num": 17,
+      "name": "ベラルーシ",
+      "call": "Belarus"
+    },
+    {
+      "num": 18,
+      "name": "ベルギー",
+      "call": "Belgium"
+    },
+    {
+      "num": 19,
+      "name": "ベナン",
+      "call": "Benin"
+    },
+    {
+      "num": 20,
+      "name": "ブータン",
+      "call": "Bhutan"
+    },
+    {
+      "num": 21,
+      "name": "ボリビア",
+      "call": "Bolivia"
+    },
+    {
+      "num": 22,
+      "name": "ボツワナ",
+      "call": "Botswana"
+    },
+    {
+      "num": 23,
+      "name": "ブラジル",
+      "call": "Brazil"
+    },
+    {
+      "num": 24,
+      "name": "ブルガリア",
+      "call": "Bulgaria"
+    },
+    {
+      "num": 25,
+      "name": "ブルキナファソ",
+      "call": "Burkina Faso"
+    },
+    {
+      "num": 26,
+      "name": "ブルンディ",
+      "call": "Burundi"
+    },
+    {
+      "num": 27,
+      "name": "コートジボワール",
+      "call": "CI"
+    },
+    {
+      "num": 28,
+      "name": "カンボジア",
+      "call": "Cambodia"
+    },
+    {
+      "num": 29,
+      "name": "カメルーン",
+      "call": "Cameroon"
+    },
+    {
+      "num": 30,
+      "name": "カナダ",
+      "call": "Canada"
+    },
+    {
+      "num": 31,
+      "name": "カリビアン",
+      "call": "Caribbean"
+    },
+    {
+      "num": 32,
+      "name": "中央アフリカ",
+      "call": "Centrafricanie"
+    },
+    {
+      "num": 33,
+      "name": "チャド",
+      "call": "Chad"
+    },
+    {
+      "num": 34,
+      "name": "チリ",
+      "call": "Chile"
+    },
+    {
+      "num": 35,
+      "name": "中国",
+      "call": "China"
+    },
+    {
+      "num": 36,
+      "name": "コロンビア",
+      "call": "Colombia"
+    },
+    {
+      "num": 37,
+      "name": "コスタリカ",
+      "call": "Costa Rica"
+    },
+    {
+      "num": 38,
+      "name": "クロアチア",
+      "call": "Croatia"
+    },
+    {
+      "num": 39,
+      "name": "キューバ",
+      "call": "Cuba"
+    },
+    {
+      "num": 40,
+      "name": "キプロス島",
+      "call": "Cyprus"
+    },
+    {
+      "num": 41,
+      "name": "チェコ",
+      "call": "Czech Republic"
+    },
+    {
+      "num": 42,
+      "name": "コンゴ民主共和国",
+      "call": "Democratic Republic of the Congo"
+    },
+    {
+      "num": 43,
+      "name": "デンマーク",
+      "call": "Denmark"
+    },
+    {
+      "num": 44,
+      "name": "ドミニカ共和国",
+      "call": "Dominican Republic"
+    },
+    {
+      "num": 45,
+      "name": "エクアドル",
+      "call": "Ecuador"
+    },
+    {
+      "num": 46,
+      "name": "エジプト",
+      "call": "Egypt"
+    },
+    {
+      "num": 47,
+      "name": "エルサルバドル",
+      "call": "Elsavador"
+    },
+    {
+      "num": 48,
+      "name": "赤道ギニア",
+      "call": "Equatrial Guinea"
+    },
+    {
+      "num": 49,
+      "name": "エリトリア",
+      "call": "Eritrea"
+    },
+    {
+      "num": 50,
+      "name": "エストニア",
+      "call": "Estonia"
+    },
+    {
+      "num": 51,
+      "name": "エチオピア",
+      "call": "Ethiopia"
+    },
+    {
+      "num": 52,
+      "name": "フェロー諸島",
+      "call": "Faroe Islands"
+    },
+    {
+      "num": 53,
+      "name": "フィジー",
+      "call": "Fiji"
+    },
+    {
+      "num": 54,
+      "name": "フィンランド",
+      "call": "Finland"
+    },
+    {
+      "num": 55,
+      "name": "フランス",
+      "call": "France"
+    },
+    {
+      "num": 56,
+      "name": "フランス領ギアナ",
+      "call": "French Guiana"
+    },
+    {
+      "num": 57,
+      "name": "ガボン",
+      "call": "Gabon"
+    },
+    {
+      "num": 58,
+      "name": "ガンビア",
+      "call": "Gambia"
+    },
+    {
+      "num": 59,
+      "name": "ジョージア",
+      "call": "Georgia"
+    },
+    {
+      "num": 60,
+      "name": "ドイツ",
+      "call": "Germany"
+    },
+    {
+      "num": 61,
+      "name": "ガーナ",
+      "call": "Ghana"
+    },
+    {
+      "num": 62,
+      "name": "ギリシャ",
+      "call": "Greece"
+    },
+    {
+      "num": 63,
+      "name": "グリーンランド",
+      "call": "Green Land"
+    },
+    {
+      "num": 64,
+      "name": "グアテマラ",
+      "call": "Guatemala"
+    },
+    {
+      "num": 65,
+      "name": "ギニア",
+      "call": "Guinea"
+    },
+    {
+      "num": 66,
+      "name": "ギニアビサウ",
+      "call": "Guinea-Bissau"
+    },
+    {
+      "num": 67,
+      "name": "ガイアな",
+      "call": "Guyana"
+    },
+    {
+      "num": 68,
+      "name": "ハイチ",
+      "call": "Haiti"
+    },
+    {
+      "num": 69,
+      "name": "ハワイ",
+      "call": "Hawaii"
+    },
+    {
+      "num": 70,
+      "name": "ホンジュラス",
+      "call": "Honduras"
+    },
+    {
+      "num": 71,
+      "name": "香港",
+      "call": "Hong Kong"
+    },
+    {
+      "num": 72,
+      "name": "ハンガリー",
+      "call": "Hungary"
+    },
+    {
+      "num": 73,
+      "name": "アイスランド",
+      "call": "Iceland"
+    },
+    {
+      "num": 74,
+      "name": "インド",
+      "call": "India"
+    },
+    {
+      "num": 75,
+      "name": "インドネシア",
+      "call": "Indonesia"
+    },
+    {
+      "num": 76,
+      "name": "イラン",
+      "call": "Iran"
+    },
+    {
+      "num": 77,
+      "name": "イラク",
+      "call": "Iraq"
+    },
+    {
+      "num": 78,
+      "name": "アイルランド",
+      "call": "Ireland"
+    },
+    {
+      "num": 79,
+      "name": "イスラエル",
+      "call": "Israel"
+    },
+    {
+      "num": 80,
+      "name": "イタリア",
+      "call": "Italy"
+    },
+    {
+      "num": 81,
+      "name": "ジャマイカ",
+      "call": "Jamaica"
+    },
+    {
+      "num": 82,
+      "name": "日本",
+      "call": "Japan"
+    },
+    {
+      "num": 83,
+      "name": "ヨルダン",
+      "call": "Jordan"
+    },
+    {
+      "num": 84,
+      "name": "カザフスタン",
+      "call": "Kazakhstan"
+    },
+    {
+      "num": 85,
+      "name": "ケニア",
+      "call": "Kenya"
+    },
+    {
+      "num": 86,
+      "name": "コソボ",
+      "call": "Kosovo"
+    },
+    {
+      "num": 87,
+      "name": "クウェート",
+      "call": "Kuwait"
+    },
+    {
+      "num": 88,
+      "name": "キルギスタン",
+      "call": "Kyrgyzstan"
+    },
+    {
+      "num": 89,
+      "name": "ラオス",
+      "call": "Laos"
+    },
+    {
+      "num": 90,
+      "name": "ラトビア",
+      "call": "Latvia"
+    },
+    {
+      "num": 91,
+      "name": "レバノン",
+      "call": "Lebanon"
+    },
+    {
+      "num": 92,
+      "name": "レソト",
+      "call": "Lesotho"
+    },
+    {
+      "num": 93,
+      "name": "リベリア",
+      "call": "Liberia"
+    },
+    {
+      "num": 94,
+      "name": "リビア",
+      "call": "Libya"
+    },
+    {
+      "num": 95,
+      "name": "リヒテンシュタイン",
+      "call": "Liechtenstein"
+    },
+    {
+      "num": 96,
+      "name": "リトアニア",
+      "call": "Lithuania"
+    },
+    {
+      "num": 97,
+      "name": "ルクセンブルク",
+      "call": "Luxembourg"
+    },
+    {
+      "num": 98,
+      "name": "マケドニア",
+      "call": "Macedonia"
+    },
+    {
+      "num": 99,
+      "name": "マダガスカル",
+      "call": "Madagascar"
+    },
+    {
+      "num": 100,
+      "name": "マラウイ",
+      "call": "Malawi"
+    },
+    {
+      "num": 101,
+      "name": "マレーシア",
+      "call": "Malaysia"
+    },
+    {
+      "num": 102,
+      "name": "モルディブ",
+      "call": "Maldives"
+    },
+    {
+      "num": 103,
+      "name": "マリ",
+      "call": "Mali"
+    },
+    {
+      "num": 104,
+      "name": "マルタ",
+      "call": "Malta"
+    },
+    {
+      "num": 105,
+      "name": "モーリタニア",
+      "call": "Mauritania"
+    },
+    {
+      "num": 106,
+      "name": "モーリシャス",
+      "call": "Mauritius"
+    },
+    {
+      "num": 107,
+      "name": "メキシコ",
+      "call": "Mexico"
+    },
+    {
+      "num": 108,
+      "name": "モルドヴァ",
+      "call": "Moldova"
+    },
+    {
+      "num": 109,
+      "name": "モンゴル",
+      "call": "Mongolia"
+    },
+    {
+      "num": 110,
+      "name": "モンテネグロ",
+      "call": "Montenegro"
+    },
+    {
+      "num": 111,
+      "name": "モロッコ",
+      "call": "Morocco"
+    },
+    {
+      "num": 112,
+      "name": "モザンビーク",
+      "call": "Mozambique"
+    },
+    {
+      "num": 113,
+      "name": "ミャンマー",
+      "call": "Myanmar"
+    },
+    {
+      "num": 114,
+      "name": "ナミビア",
+      "call": "Namibia"
+    },
+    {
+      "num": 115,
+      "name": "ネパール",
+      "call": "Nepal"
+    },
+    {
+      "num": 116,
+      "name": "オランダ",
+      "call": "Netherlands"
+    },
+    {
+      "num": 117,
+      "name": "ニューカレドニア",
+      "call": "New Caledonia"
+    },
+    {
+      "num": 118,
+      "name": "ニュージーランド",
+      "call": "New Zealand"
+    },
+    {
+      "num": 119,
+      "name": "ニカラグラ",
+      "call": "Nicaragua"
+    },
+    {
+      "num": 120,
+      "name": "ニジェール",
+      "call": "Niger"
+    },
+    {
+      "num": 121,
+      "name": "ナイジェリア",
+      "call": "Nigeria"
+    },
+    {
+      "num": 122,
+      "name": "北朝鮮",
+      "call": "North Korea"
+    },
+    {
+      "num": 123,
+      "name": "ノルウェー",
+      "call": "Norway"
+    },
+    {
+      "num": 124,
+      "name": "オマーン",
+      "call": "Oman"
+    },
+    {
+      "num": 125,
+      "name": "パキスタン",
+      "call": "Pakistan"
+    },
+    {
+      "num": 126,
+      "name": "パレスチナ",
+      "call": "Palestine"
+    },
+    {
+      "num": 127,
+      "name": "パナマ",
+      "call": "Panama"
+    },
+    {
+      "num": 128,
+      "name": "パプアニューギニア",
+      "call": "Papua New Guinea"
+    },
+    {
+      "num": 129,
+      "name": "パラグアイ",
+      "call": "Paraguay"
+    },
+    {
+      "num": 130,
+      "name": "ペル",
+      "call": "Peru"
+    },
+    {
+      "num": 131,
+      "name": "フィリピン",
+      "call": "Philippines"
+    },
+    {
+      "num": 132,
+      "name": "ポーランド",
+      "call": "Poland"
+    },
+    {
+      "num": 133,
+      "name": "ポルトガル",
+      "call": "Portugal"
+    },
+    {
+      "num": 134,
+      "name": "プエルトリコ",
+      "call": "Puerto Rico"
+    },
+    {
+      "num": 135,
+      "name": "カタール",
+      "call": "Qatar"
+    },
+    {
+      "num": 136,
+      "name": "コンゴ共和国",
+      "call": "Republic of the Congo"
+    },
+    {
+      "num": 137,
+      "name": "ルーマニア",
+      "call": "Romania"
+    },
+    {
+      "num": 138,
+      "name": "ロシア",
+      "call": "Russia"
+    },
+    {
+      "num": 139,
+      "name": "ルワンダ",
+      "call": "Rwanda"
+    },
+    {
+      "num": 140,
+      "name": "ソマリア",
+      "call": "Samalia"
+    },
+    {
+      "num": 141,
+      "name": "サモア",
+      "call": "Samoa"
+    },
+    {
+      "num": 142,
+      "name": "サンマリノ",
+      "call": "San Marino"
+    },
+    {
+      "num": 143,
+      "name": "サウジアラビア",
+      "call": "Saudi Arabia"
+    },
+    {
+      "num": 144,
+      "name": "スコットランド",
+      "call": "Scotland"
+    },
+    {
+      "num": 145,
+      "name": "セネガル",
+      "call": "Senegal"
+    },
+    {
+      "num": 146,
+      "name": "セルビア",
+      "call": "Serbia"
+    },
+    {
+      "num": 147,
+      "name": "セーシェル",
+      "call": "Nicaragua"
+    },
+    {
+      "num": 148,
+      "name": "シエラレオネ",
+      "call": "Sierra Leone"
+    },
+    {
+      "num": 149,
+      "name": "シンガポール",
+      "call": "Singapore"
+    },
+    {
+      "num": 150,
+      "name": "スロバキア",
+      "call": "Slovakia"
+    },
+    {
+      "num": 151,
+      "name": "スロベニア",
+      "call": "Slovenia"
+    },
+    {
+      "num": 152,
+      "name": "ソロモン諸島",
+      "call": "Solomon Islands"
+    },
+    {
+      "num": 153,
+      "name": "南アフリカ",
+      "call": "South Africa"
+    },
+    {
+      "num": 154,
+      "name": "韓国",
+      "call": "South Korea"
+    },
+    {
+      "num": 155,
+      "name": "南スーダン",
+      "call": "South Sudan"
+    },
+    {
+      "num": 156,
+      "name": "スペイン",
+      "call": "Spain"
+    },
+    {
+      "num": 157,
+      "name": "スリランカ",
+      "call": "Sri Lanka"
+    },
+    {
+      "num": 158,
+      "name": "スーダン",
+      "call": "Sudan"
+    },
+    {
+      "num": 159,
+      "name": "スリナム",
+      "call": "Surinam"
+    },
+    {
+      "num": 160,
+      "name": "スワジランド",
+      "call": "Swaziland"
+    },
+    {
+      "num": 161,
+      "name": "スウェーデン",
+      "call": "Sweden"
+    },
+    {
+      "num": 162,
+      "name": "スイス",
+      "call": "Switzerland"
+    },
+    {
+      "num": 163,
+      "name": "シリア",
+      "call": "Syria"
+    },
+    {
+      "num": 164,
+      "name": "台湾",
+      "call": "Taiwan"
+    },
+    {
+      "num": 165,
+      "name": "タジキスタン",
+      "call": "Tajikistan"
+    },
+    {
+      "num": 166,
+      "name": "タンザニア",
+      "call": "Tanzania"
+    },
+    {
+      "num": 167,
+      "name": "タイ",
+      "call": "Thailand"
+    },
+    {
+      "num": 168,
+      "name": "トーゴ",
+      "call": "Togolaise"
+    },
+    {
+      "num": 169,
+      "name": "トリニダードトバゴ",
+      "call": "Trinidad and Tobago"
+    },
+    {
+      "num": 170,
+      "name": "チュニジア",
+      "call": "Tunisia"
+    },
+    {
+      "num": 171,
+      "name": "トルコ",
+      "call": "Turkey"
+    },
+    {
+      "num": 172,
+      "name": "トルクメニスタン",
+      "call": "Turkmenistan"
+    },
+    {
+      "num": 173,
+      "name": "ウガンダ",
+      "call": "Uganda"
+    },
+    {
+      "num": 174,
+      "name": "ウクライナ",
+      "call": "Ukraine"
+    },
+    {
+      "num": 175,
+      "name": "アラブ首長国連邦",
+      "call": "United Arab Emirates"
+    },
+    {
+      "num": 176,
+      "name": "イギリス",
+      "call": "United Kingdom"
+    },
+    {
+      "num": 177,
+      "name": "アメリカ",
+      "call": "United States"
+    },
+    {
+      "num": 178,
+      "name": "ウルグアイ",
+      "call": "Uruguay"
+    },
+    {
+      "num": 179,
+      "name": "ウズベキスタン",
+      "call": "Uzbekistan"
+    },
+    {
+      "num": 180,
+      "name": "バヌアツ",
+      "call": "Vanuatu"
+    },
+    {
+      "num": 181,
+      "name": "ベネズエラ",
+      "call": "Venezuela"
+    },
+    {
+      "num": 182,
+      "name": "ベトナム",
+      "call": "Vietnam"
+    },
+    {
+      "num": 183,
+      "name": "西サハラ",
+      "call": "Western Sahara"
+    },
+    {
+      "num": 184,
+      "name": "イエメン",
+      "call": "Yemen"
+    },
+    {
+      "num": 185,
+      "name": "ザンビア",
+      "call": "Zambia"
+    },
+    {
+      "num": 186,
+      "name": "ジンバブエ",
+      "call": "Zimbabwe"
+    },
+    {
+      "num": 187,
+      "name": "ボスニア・ヘルツェゴビナ",
+      "call": "bosnia and Herzegovina"
+    }
+  ]
+}

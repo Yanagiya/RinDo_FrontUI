@@ -1,9 +1,10 @@
 import React, { PropTypes, Component } from 'react';
 import { Link } from 'react-router';
-import { Paper, TextField, RaisedButton } from 'material-ui';
+import { Paper, TextField, RaisedButton, Drawer } from 'material-ui';
 import ActionAccountCicle from 'material-ui/svg-icons/action/account-circle';
 import * as actions from '../../../actions';
 import defaultIcon from './default_user_icon.png';
+import Region from './region';
 
 export default class RegisterBefore extends Component {
   static propTypes = {
@@ -85,10 +86,13 @@ export default class RegisterBefore extends Component {
                        floatingLabelText='email'
                        defaultValue=''
                        onKeyDown={this.submit.bind(this)} /><br/>
-           <RaisedButton style={styles.submit}
+            <Region/>
+            <RaisedButton style={styles.submit}
                           label='Submit'
                           onTouchTap={this.submit.bind(this)}
                           primary />
+
+
           </Paper>
         </div>
     );

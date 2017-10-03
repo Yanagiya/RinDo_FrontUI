@@ -1,0 +1,14 @@
+{
+  "world": [
+      {
+        "num": 1,
+        "name": "アフガニスタン",
+        "call": "Afghanistan"
+      },
+      {
+      "num": 2,
+      "name": "アルバニア",
+      "call": "Albania"
+      }
+  ]
+}
