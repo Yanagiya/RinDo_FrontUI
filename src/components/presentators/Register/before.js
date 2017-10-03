@@ -86,7 +86,7 @@ export default class RegisterBefore extends Component {
                        floatingLabelText='email'
                        defaultValue=''
                        onKeyDown={this.submit.bind(this)} /><br/>
-            <Region/>
+            <Region ref='region' />
             <RaisedButton style={styles.submit}
                           label='Submit'
                           onTouchTap={this.submit.bind(this)}
@@ -101,9 +101,10 @@ export default class RegisterBefore extends Component {
   submit(event) {
     const identity = this.refs.identity.getValue();
     const password = this.refs.password.getValue();
-    const country1 = "India";
-    const country2 = "India";
-    const country3 = "India";
+    const countries = this.refs.region.getCountries();
+    const country1 = countries[0];
+    const country2 = countries[1];
+    const country3 = countries[2];
     const email    = this.refs.email.getValue();
     const userIcon = this.refs.icon.src;
 

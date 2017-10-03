@@ -12,6 +12,8 @@ var rjson = require('../../../utils/region/region.json');
 export default class RegionSelect extends React.Component {
   state = {
     open: false, 
+    count: 0,
+    checkedCountries: [],
   };
   handleToggle = () => {
     this.setState({open: !this.state.open});
@@ -27,15 +29,53 @@ export default class RegionSelect extends React.Component {
     console.log("checked");
   };
   
+  onCheck( event, checked ) {
+    const country = event.target.id;
+    if (checked) {
+      this.state.checkedCountries.push(country);
+      this.setState({count: this.state.count + 1});
+    } else {
+      for ( var i = 0; i < this.state.checkedCountries.length; i++) {
+        if ( this.state.checkedCountries[i] == country )
+          this.state.checkedCountries.splice(i, 1);
+      }
+      this.setState({count: this.state.count - 1});
+    }
+  }
+
+  checkDisabled( country ) {
+    const { count, checkedCountries } = this.state;
+
+    if ( count < 3 ) {
+      return false;
+    }
+    for ( var c of checkedCountries ) {
+      if ( c == country )
+        return false;
+    }
+    return true;
+  }
+
+  getCountries() {
+    return this.state.checkedCountries;
+  }
+
   render() {
     const regionList = [];
     for (let i in rjson['world']) {
       regionList.push(
         <List>
           <ListItem
-            primaryText={rjson['world'][i].name} leftCheckbox={<Checkbox />}
+            primaryText={rjson['world'][i].name} 
+            leftCheckbox={
+              <Checkbox 
+                ref={rjson['world'][i].call} 
+                id={rjson['world'][i].call} 
+                onCheck={this.onCheck.bind(this)} 
+                disabled={this.checkDisabled(rjson['world'][i].call)}
+              />
+            }
           />
-          
         </List>
       );
     };
