@@ -102,6 +102,14 @@ export const registerFailure = ( userData ) => {
   };
 };
 
+let nextRegionId = 0;
+export const addRegion = (regionName) => {
+  return {
+    type: types.ADD_REGION,
+    payload: regionName,
+  };
+};
+
 export const loginInit = () => {
   return {
     type: types.LOGIN_INIT,
