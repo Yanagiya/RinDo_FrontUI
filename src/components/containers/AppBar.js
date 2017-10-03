@@ -19,6 +19,9 @@ export default class AppBar extends Component {
 
   getStyles() {
     return {
+      backcolor: {
+    
+      },
       main: {
         maxWidth: 1200,
         margin: '0 auto',
@@ -42,7 +45,7 @@ export default class AppBar extends Component {
     const title = this.getTitle();
 
     return (
-        <div>
+        <div style={styles.backcolor}>
           <Header title={title} account={this.props.account} dispatch={this.props.dispatch} />
           <main style={styles.main}>
             {this.props.children}

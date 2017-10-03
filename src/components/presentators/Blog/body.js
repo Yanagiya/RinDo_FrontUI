@@ -15,6 +15,7 @@ export default class BlogBody extends Component {
         justifyContent: 'center',
 	    },
       addContent: {
+        background: 'blue',
         position: 'fixed',
         right: 20,
         bottom: 20,
