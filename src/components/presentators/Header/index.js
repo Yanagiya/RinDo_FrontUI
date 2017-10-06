@@ -27,7 +27,6 @@ export default class Header extends Component {
       },
       Stitle: {
         height: 50,
-        //width: 24,
         color: Colors.orange900,
         textAligh: 'center'
       }

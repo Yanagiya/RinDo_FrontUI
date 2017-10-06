@@ -20,7 +20,7 @@ export default class MainMap extends Component {
       console.log(region);
           
       var options = {
-        backgroundColor: '#81d4fa'
+        backgroundColor: '#B3E5FC'
       };
       var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
       chart.draw(data, options);
@@ -47,20 +47,22 @@ export default class MainMap extends Component {
         width: 700
       },
       searchTxt: {
+        display: "flex",
+        background: "#F5F5F5",
         position: 'absolute',
         left: 20,
-        textIndent: 20,
-        width: 700
+        textIndent: 30,
+        width: 700,
+        textColor: "white"
       },
       iconSearch: {
-        position: 'absolute',
-        left: 40,
-        top: 15,
+        position: 'relative',
+        left: 5,
+        top: 5,
         width: 20, 
         height: 20
       },
       searchBox: {
-        right:  20,
         position: 'relative',
       }
 
@@ -72,7 +74,6 @@ export default class MainMap extends Component {
     return (
       <div>
         <MenuItem disabled={true} style={styles.searchBox}>
-          <img src={SearchIcon} style={styles.iconSearch} /> 
           <AutoComplete 
             hintText='Search'
             dataSource={this.state.dataSource}
@@ -80,6 +81,7 @@ export default class MainMap extends Component {
             fullWidth={true}
             style={styles.searchTxt}
           />
+          <img src={SearchIcon} style={styles.iconSearch} /> 
         </MenuItem>
         <div id="regions_div" style={styles.map}>
         </div>
