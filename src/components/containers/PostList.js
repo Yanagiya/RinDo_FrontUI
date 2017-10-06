@@ -7,16 +7,12 @@ import Post from '../presentators/Post';
   blogposts: state.blogposts,
 }))
 export default class PostList extends Component {
-  static propTypes = {
-    blogposts: PropTypes.array.isRequired,
-    dispatch: PropTypes.func.isRequired
-  }
-
   render() {
     const { blogposts, dispatch } = this.props;
 
     return (
       <div style={this.props.style}>
+
         {blogposts.map((post, i) =>
           <Post key={i}
                 post={post}

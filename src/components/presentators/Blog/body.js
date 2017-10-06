@@ -36,13 +36,13 @@ export default class BlogBody extends Component {
   }
 
   render() {
-    const { dispatch } = this.props;
+    const { dispatch, region } = this.props;
     const styles = this.getStyles();
 
     return (
-      <AppBar>
+      <AppBar style={styles.test}>
         <div style={styles.section}>
-          <MainMap style={styles.mainMap} />
+          <MainMap style={styles.mainMap} region={region} />
           <PostList style={styles.postList} />      
           <FloatingActionButton style={styles.addContent}
                               onTouchTap={() => {

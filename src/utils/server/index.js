@@ -41,6 +41,10 @@ class Server {
     this.post.fetchPosts();
   }
 
+  fetchRegionPostCount( regionKey ) {
+    this.post.fetchRegionPostCount( regionKey );
+  }
+
   sendDraft( postId, title, poster, body, userId, country, goodPoint ) {
     this.post.sendDraft( postId, title, poster, body, userId, country, goodPoint );
   }

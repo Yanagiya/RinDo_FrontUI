@@ -10,13 +10,14 @@ export default class MainMap extends Component {
       'packages':['geochart'],
       'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
     });
-    google.charts.setOnLoadCallback(drawRegionsMap);
-    console.log("#####passing#############")
+    google.charts.setOnLoadCallback(drawRegionsMap.bind(this));
     function drawRegionsMap() {
+      const { region } = this.props;
       var data = google.visualization.arrayToDataTable([
         ['Country', 'Popularity'],
-
+        ...region,
       ]);
+      console.log(region);
           
       var options = {
         backgroundColor: '#81d4fa'

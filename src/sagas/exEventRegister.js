@@ -7,7 +7,9 @@ import server from '../utils/server';
 
 function subscribe( socket ) {
   return eventChannel( emitter => {
+    eventCatcher( SOCKET_EVENT.SEND_DRAFT_RESULT, socket, emitter );
     eventCatcher( SOCKET_EVENT.CATCH_POSTS, socket, emitter );
+    eventCatcher( SOCKET_EVENT.CATCH_REGION_POST_COUNT, socket, emitter );
     eventCatcher( SOCKET_EVENT.REGISTER_RESULT, socket, emitter );
     eventCatcher( SOCKET_EVENT.LOGIN_RESULT, socket, emitter );
     return () => {};
@@ -30,8 +32,14 @@ function* channelWatcher() {
   while (true) {
     const { event, data } = yield take(ch);
     switch ( event ) {
+      case SOCKET_EVENT.SEND_DRAFT_RESULT:
+        yield fork( sendDraftResultProcess, data );
+        break;
       case SOCKET_EVENT.CATCH_POSTS:
         yield fork( catchPostsProcess, data );
+        break;
+      case SOCKET_EVENT.CATCH_REGION_POST_COUNT:
+        yield fork( catchRegionPostCountProcess, data );
         break;
       case SOCKET_EVENT.REGISTER_RESULT:
         yield fork( registerResultProcess, data );
@@ -43,8 +51,17 @@ function* channelWatcher() {
   }
 }
 
+function* sendDraftResultProcess( data ) {
+  yield put( actions.fetchPosts() );  
+  yield put( actions.fetchRegionPostCount() );
+}
+
 function* catchPostsProcess( data ) {
   yield put( actions.catchPosts( data ) );  
+}
+
+function* catchRegionPostCountProcess( data ) {
+  yield put( actions.catchRegionPostCount( data ) );  
 }
 
 function* registerResultProcess( data ) {

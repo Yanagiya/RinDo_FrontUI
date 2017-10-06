@@ -11,8 +11,13 @@ export default class Post {
   }
 
   fetchPosts() {
-    this.socket.emit( SOCKET_EVENT.FETCH_POSTS, {
-    });
+    this.socket.emit( SOCKET_EVENT.FETCH_POSTS, {} );
+  }
+
+  fetchRegionPostCount( regionKey ) {
+    this.socket.emit( SOCKET_EVENT.FETCH_REGION_POST_COUNT, {
+      regionKey: regionKey
+    } );
   }
 
   sendDraft( postId, title, poster, body, userId, country, goodPoint ) {

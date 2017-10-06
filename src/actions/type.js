@@ -17,10 +17,14 @@ export const REGISTER_INIT = 'register/REGISTER_INIT';
 export const REGISTER_SEND = 'register/REGISTER_SEND';
 export const REGISTER_SUCCESS = 'register/REGISTER_SUCCESS';
 export const REGISTER_FAILURE = 'register/REGISTER_FAILURE';
+
 export const LOGIN_INIT = 'login/LOGI:N_INIT';
 export const LOGIN_SEND = 'login/LOGIN_SEND';
 export const LOGIN_SUCCESS = 'login/LOGIN_SUCCESS';
 export const LOGIN_FAILURE = 'login/LOGIN_FAILURE';
 export const LOGOUT = 'login/LOGOUT';
+
 export const REGION_INIT = 'region/REGION_INIT';
+export const FETCH_REGION_POST_COUNT = 'region/FETCH_REGION_POST_COUNT';
+export const CATCH_REGION_POST_COUNT = 'region/CATCH_REGION_POST_COUNT';
 export const REGION_SELECT = 'region/REGION_SELECT';

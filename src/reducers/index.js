@@ -5,6 +5,7 @@ import blogposts from './blogposts';
 import draft from './draft';
 import register from './register';
 import login from './login';
+import region from './region';
 
 export default combineReducers({
   account,
@@ -12,4 +13,5 @@ export default combineReducers({
   draft,
   register,
   login,
+  region,
 });

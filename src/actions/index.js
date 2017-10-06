@@ -1,12 +1,8 @@
 import * as types from './type';
 
-export const fetchPosts = ( start = 0, limit = 10 ) => {
+export const fetchPosts = () => {
   return {
     type: types.FETCH_POSTS,
-    payload: {
-      body: `/post?_start=${start}&_limit=${limit}`,
-      method: 'get',
-    },
   };
 };
 
@@ -143,9 +139,21 @@ export const logout = () => {
   };
 };
 
-export const initRegion = () => {
+export const regionInit = () => {
   return {
     type: types.REGION_INIT,
   };
 }
 
+export const fetchRegionPostCount = () => {
+  return {
+    type: types.FETCH_REGION_POST_COUNT,
+  };
+}
+
+export const catchRegionPostCount = ( regionPostCount ) => {
+  return {
+    type: types.CATCH_REGION_POST_COUNT,
+    payload: regionPostCount,
+  };
+}
