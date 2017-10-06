@@ -10,21 +10,6 @@ export default class MainMap extends Component {
       'packages':['geochart'],
       'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
     });
-    google.charts.setOnLoadCallback(drawRegionsMap.bind(this));
-    function drawRegionsMap() {
-      const { region } = this.props;
-      var data = google.visualization.arrayToDataTable([
-        ['Country', 'Popularity'],
-        ...region,
-      ]);
-      console.log(region);
-          
-      var options = {
-        backgroundColor: '#B3E5FC'
-      };
-      var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
-      chart.draw(data, options);
-    }
   }
   state = {
     dataSource: [],
@@ -39,6 +24,21 @@ export default class MainMap extends Component {
       ],
     });
   };
+
+  drawRegionsMap() {
+    const { region } = this.props;
+    var data = google.visualization.arrayToDataTable([
+      ['Country', 'Popularity'],
+      ...region,
+    ]);
+        
+    var options = {
+      backgroundColor: '#B3E5FC'
+    };
+    var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+    chart.draw(data, options);
+  }
+
   getStyles() {
     return {
       map: {
@@ -70,6 +70,8 @@ export default class MainMap extends Component {
   }
   
   render() {
+    google.charts.setOnLoadCallback(this.drawRegionsMap.bind(this));
+
     const styles = this.getStyles();
     return (
       <div>
