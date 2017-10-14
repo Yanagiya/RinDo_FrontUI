@@ -44,6 +44,13 @@ export const editDraft = ( title, poster, body ) => {
   };
 };
 
+export const updateDraftUi = ( draftData ) => {
+  return {
+    type: types.UPDATE_DRAFT_UI,
+    payload: draftData,
+  };
+};
+
 export const completeDraft = ( draftData ) => {
   return {
     type: types.COMPLETE_DRAFT,
