@@ -6,6 +6,7 @@ export const CATCH_POSTS = 'posts/CATCH_POSTS';
 
 export const INIT_DRAFT = 'draft/INIT_DRAFT';
 export const EDIT_DRAFT = 'draft/EDIT_DRAFT';
+export const UPDATE_DRAFT_UI = 'draft/UPDATE_DRAFT_UI';
 export const COMPLETE_DRAFT = 'draft/COMPLETE_DRAFT';
 
 export const UPDATE_ACCOUNT = 'account/UPDATE_ACCOUNT';

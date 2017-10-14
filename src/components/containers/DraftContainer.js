@@ -20,7 +20,10 @@ export default class DraftContainer extends Component {
     }
     return (
       <div>
-        <DraftBody draft={draft} userId={account.userId} dispatch={dispatch} />
+        <DraftBody account={account} 
+                   draft={draft} 
+                   userId={account.userId} 
+                   dispatch={dispatch} />
       </div>
     );
   }
