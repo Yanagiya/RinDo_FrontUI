@@ -40,8 +40,7 @@ export default class Post extends Component {
     return {
       card: {
         position: 'relative',
-        marginTop: 2,
-        marginBottom: 2
+        margin: 5,
       },
       iconMenu: {
         position: 'absolute',
@@ -60,7 +59,7 @@ export default class Post extends Component {
       },
       cardMediaImage: {
         maxHeight: '200px',
-        maxWidth: '40%'
+        width: '400px',
       }
     };
   }

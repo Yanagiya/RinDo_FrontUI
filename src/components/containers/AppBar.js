@@ -28,13 +28,13 @@ export default class AppBar extends Component {
   }
 
   getTitle() {
-    var title = 'Rindo\t\t\t';
+    var title = 'EasyJob\u0020\u0020';
     const userName = this.props.account.userName;
 
     if ( userName == 'null' || userName == null ) {
       return title;
     } 
-    return title + 'Hi, ' + userName;
+    return title + "\u0020" + 'Hi, ' + userName;
   }
 
   render() {
